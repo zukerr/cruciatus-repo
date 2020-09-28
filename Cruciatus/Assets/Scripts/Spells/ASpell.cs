@@ -43,7 +43,7 @@ public abstract class ASpell : ScriptableObject
         PlayerCharacter.instance.IgnitionModule.ModifyResource(ignitionGeneration);
     }
 
-    public bool CastAvailable()
+    public virtual bool CastAvailable()
     {
         if(!PlayerCharacter.instance.CooldownsModule.CheckIfSpellOnCooldown(this))
         {

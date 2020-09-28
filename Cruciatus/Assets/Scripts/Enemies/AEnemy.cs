@@ -7,7 +7,7 @@ public abstract class AEnemy : MonoBehaviour
     [SerializeField]
     private float movementSpeed = 1.2f;
     [SerializeField]
-    private GameObject rootGameObject = null;
+    protected GameObject rootGameObject = null;
     [SerializeField]
     private DamagableObjectNameplated damagableObject = null;
     [SerializeField]
@@ -20,6 +20,7 @@ public abstract class AEnemy : MonoBehaviour
     private Vector2 startingPosition;
 
     public float MovementSpeed => movementSpeed;
+    public DamagableObject DamagableEnemy => damagableObject;
 
     // Start is called before the first frame update
     void Start()
@@ -31,29 +32,6 @@ public abstract class AEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        if(Vector2.Distance(rbody.position, PlayerCharacter.instance.transform.position) > combatRange)
-        {
-            if(Vector2.Distance(rbody.position, startingPosition) > resetToStartingPositionRadius)
-            {
-                MoveTowardsStartingSpot();
-                mobPathfinding.StopTracking();
-            }
-        }
-        else
-        {
-            if (!mobPathfinding.NeedToFindPath())
-            {
-                MoveTowardsPlayer();
-                RotateTowardsPlayer();
-            }
-            else
-            {
-                mobPathfinding.WalkToClosestTrack(movementSpeed);
-            }
-        }
-        */
-
         AttackPlayer();
         UpdateDeath();
     }
@@ -87,7 +65,7 @@ public abstract class AEnemy : MonoBehaviour
         rbody.MovePosition(rbody.position + movementVector * Time.fixedDeltaTime * movementSpeed);
     }
 
-    private void RotateTowardsPlayer()
+    protected void RotateTowardsPlayer()
     {
         //rotation
         RotateTowardsVector3Position(PlayerCharacter.instance.transform.position);

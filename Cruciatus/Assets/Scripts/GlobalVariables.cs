@@ -10,6 +10,8 @@ public class GlobalVariables
     public const int WALL_LAYER_INDEX = 8;
     public const int ENEMY_LAYER_INDEX = 11;
     public const int PLAYER_LAYER_INDEX = 13;
+    public const int PROJECTILE_LAYER_INDEX = 12;
+    public const int PLAYER_TRIGGERS_LAYER_INDEX = 15;
 
     public static Vector3 GetMouseWorldPosition()
     {
@@ -28,8 +30,28 @@ public class GlobalVariables
         return playerToMouse;
     }
 
+    public static Vector2 GetVectorBetweenPoints(Vector2 from, Vector2 to)
+    {
+        return to - from;
+    }
+
     public static float GetVectorAngle(Vector2 vector)
     {
         return Mathf.Atan2(vector.y, vector.x) * Mathf.Rad2Deg;
+    }
+
+    public static bool IsWallBetweenPositions(Vector2 a, Vector2 b)
+    {
+        int wallLayerMask = 1 << GlobalVariables.WALL_LAYER_INDEX;
+        RaycastHit2D rayHit = Physics2D.Linecast(a, b, wallLayerMask);
+        //Debug.DrawLine(a, b, Color.yellow, 1f);
+        if (rayHit)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

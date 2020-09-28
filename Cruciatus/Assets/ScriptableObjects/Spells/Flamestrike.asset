@@ -19,7 +19,7 @@ MonoBehaviour:
   ignitionCost: 0
   spiritGeneration: 0
   ignitionGeneration: 0
-  damagePerTick: 2
+  damagePerTick: 3
   damageTickTimePeriod: 0.1
   damageDuration: 3
   totalDuration: 5

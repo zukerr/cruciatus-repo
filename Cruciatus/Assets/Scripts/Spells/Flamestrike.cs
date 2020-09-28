@@ -8,6 +8,24 @@ public class Flamestrike : AGroundAoeSpell
     [SerializeField]
     private GameObject flamestrikePrefab = null;
 
+    public override bool CastAvailable()
+    {
+        if(base.CastAvailable())
+        {
+            Vector3 playerPos = PlayerCharacter.instance.transform.position;
+            Vector3 mouseWorldPos = GlobalVariables.GetMouseWorldPosition();
+            if (!GlobalVariables.IsWallBetweenPositions(playerPos, mouseWorldPos))
+            {
+                return true;
+            }
+            else
+            {
+                TextDisplayPlayerInfo.instance.DisplayStringInMsgBoxForTime("Target is not in the line of sight.");
+            }
+        }
+        return false;
+    }
+
     public override void Cast()
     {
         Vector3 mousePos = Input.mousePosition;

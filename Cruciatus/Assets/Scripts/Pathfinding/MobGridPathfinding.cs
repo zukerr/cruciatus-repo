@@ -30,6 +30,7 @@ public class MobGridPathfinding : MonoBehaviour
     private float modeAdjustmentPollingTime = 0.5f;
 
     private List<Vector3> pathToPlayer = null;
+    public bool WalkingSuspended { get; set; } = false;
 
     private Vector2Int playerStartingTile;
     private Vector2 playerStartingTileBottomLeft;
@@ -57,13 +58,16 @@ public class MobGridPathfinding : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(pathfindingMode == PathfindingMode.AStar)
+        if(!WalkingSuspended)
         {
-            PlayerTileUpdate();
-        }
-        else if(pathfindingMode == PathfindingMode.Follow)
-        {
-            MoveDirectlyToPlayer();
+            if (pathfindingMode == PathfindingMode.AStar)
+            {
+                PlayerTileUpdate();
+            }
+            else if (pathfindingMode == PathfindingMode.Follow)
+            {
+                MoveDirectlyToPlayer();
+            }
         }
     }
 
@@ -153,6 +157,7 @@ public class MobGridPathfinding : MonoBehaviour
 
     private bool IsWallBetweenPositions(Vector2 a, Vector2 b)
     {
+        /*
         int wallLayerMask = 1 << GlobalVariables.WALL_LAYER_INDEX;
         RaycastHit2D rayHit = Physics2D.Linecast(a, b, wallLayerMask);
         //Debug.DrawLine(a, b, Color.yellow, 1f);
@@ -164,6 +169,8 @@ public class MobGridPathfinding : MonoBehaviour
         {
             return false;
         }
+        */
+        return GlobalVariables.IsWallBetweenPositions(a, b);
     }
 
     private bool IsWallInProximity(float proximity)

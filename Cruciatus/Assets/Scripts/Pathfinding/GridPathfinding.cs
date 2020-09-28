@@ -267,7 +267,18 @@ public class GridPathfinding : MonoBehaviour
 
             foreach(Vector2Int neighbourTile in currentNode.Neighbours())
             {
-                NodePathfinding neighbourNode = walkableNodesArray[neighbourTile.x, neighbourTile.y];
+                NodePathfinding neighbourNode;
+                if ((neighbourTile.x < walkableNodesArray.GetLength(0)) 
+                    && (neighbourTile.x >= 0) 
+                    && (neighbourTile.y < walkableNodesArray.GetLength(1)) 
+                    && (neighbourTile.y >= 0))
+                {
+                    neighbourNode = walkableNodesArray[neighbourTile.x, neighbourTile.y];
+                }
+                else
+                {
+                    neighbourNode = null;
+                }
                 if(ExistsInWalkableTiles(neighbourTile) && (!NodeExistsInList(closed, neighbourNode)))
                 {
                     float traverseDistance = GetTraverseNeighbourDistance(currentNode, neighbourNode);

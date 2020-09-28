@@ -85,7 +85,8 @@ public class DashSpell : ASpell
             }
             else
             {
-                if (collider.IsTouchingLayers())
+                int playerTriggersLayerMask = 1 << GlobalVariables.PLAYER_TRIGGERS_LAYER_INDEX;
+                if (collider.IsTouchingLayers(~playerTriggersLayerMask))
                 {
                     //break
                     trueDashLength = -1;
