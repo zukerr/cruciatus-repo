@@ -39,4 +39,9 @@ public class DamagableObject : MonoBehaviour
         }
         //Debug.Log("Stabber got hit for " + value);
     }
+
+    public virtual void ModifyHealth(float value, DamageType dmgType)
+    {
+        ModifyHealth(value);
+    }
 }

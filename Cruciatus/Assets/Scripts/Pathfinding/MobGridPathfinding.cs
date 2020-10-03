@@ -28,9 +28,30 @@ public class MobGridPathfinding : MonoBehaviour
     private float engageCombatProximityThroughWall = 5f;
     [SerializeField]
     private float modeAdjustmentPollingTime = 0.5f;
+    [SerializeField]
+    private AudioSource walkingSFX = null;
 
     private List<Vector3> pathToPlayer = null;
-    public bool WalkingSuspended { get; set; } = false;
+    private bool walkingSuspended = false;
+    public bool WalkingSuspended
+    {
+        get
+        {
+            return walkingSuspended;
+        }
+        set
+        {
+            if(value == false)
+            {
+                walkingSFX.Play();
+            }
+            else
+            {
+                walkingSFX.Stop();
+            }
+            walkingSuspended = value;
+        }
+    }
 
     private Vector2Int playerStartingTile;
     private Vector2 playerStartingTileBottomLeft;
@@ -209,6 +230,10 @@ public class MobGridPathfinding : MonoBehaviour
         pathfindingMode = PathfindingMode.AStar;
         StopAllCoroutines();
         StartCoroutine(GoAlongPathCoroutine());
+        if(!walkingSFX.isPlaying)
+        {
+            walkingSFX.Play();
+        }
     }
 
     public void EnterCombat()

@@ -18,6 +18,8 @@ public class PlayerCharacter : MonoBehaviour
     private PlayerApplicableDurationEffects debuffsModule = null;
     [SerializeField]
     private PlayerCooldowns cooldownsModule = null;
+    [SerializeField]
+    private PlayerStats statsModule = null;
 
     public DamagableObject DamagablePlayer => damagablePlayer;
     public PlayerBasicAttack BasicAttackModule { get; private set; }
@@ -29,6 +31,7 @@ public class PlayerCharacter : MonoBehaviour
     public PlayerCooldowns CooldownsModule => cooldownsModule;
     public PlayerMovement MovementModule { get; private set; }
     public PlayerControls ControlsModule { get; private set; }
+    public PlayerStats StatsModule => statsModule;
 
     // Start is called before the first frame update
     void Awake()

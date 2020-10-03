@@ -10,6 +10,8 @@ public class PlayerControls : MonoBehaviour
     private EscMenu escMenu = null;
     [SerializeField]
     private LockpickingMechanism lockpicking = null;
+    [SerializeField]
+    private InventoryUI inventory = null;
 
 
     //Keybinds
@@ -22,6 +24,11 @@ public class PlayerControls : MonoBehaviour
     private bool escMenuOn = false;
     public static bool soundSettingsOn = false;
     public static bool lockpickingOn = false;
+
+    private void Awake()
+    {
+        InventoryUI.instance = inventory;
+    }
 
     // Update is called once per frame
     void Update()

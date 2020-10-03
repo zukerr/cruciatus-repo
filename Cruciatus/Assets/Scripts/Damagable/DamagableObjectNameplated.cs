@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Attached to non-player targets, mostly mobs
 public class DamagableObjectNameplated : DamagableObject
 {
     [SerializeField]
@@ -11,6 +12,10 @@ public class DamagableObjectNameplated : DamagableObject
 
     public override void ModifyHealth(float value)
     {
+        if(value < 0)
+        {
+            value = -PlayerCharacter.instance.StatsModule.ApplyStatsToDamageDealt(value);
+        }
         base.ModifyHealth(value);
         if(value < 0)
         {

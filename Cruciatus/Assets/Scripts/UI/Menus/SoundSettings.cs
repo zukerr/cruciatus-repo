@@ -103,6 +103,18 @@ public class SoundSettings : MonoBehaviour
     private static List<SoundOrganizer> ambientSources = new List<SoundOrganizer>();
     private static List<SoundOrganizer> musicSources = new List<SoundOrganizer>();
 
+    public void SetupStartingValues()
+    {
+        masterVolumeSlider.value = 20;
+        OnMasterVolumeSlider();
+
+        effectsVolumeSlider.value = 30;
+        OnEffectsVolumeSlider();
+
+        voiceVolumeSlider.value = 70;
+        OnVoiceVolumeSlider();
+    }
+
     // Start is called before the first frame update
     void Start()
     {

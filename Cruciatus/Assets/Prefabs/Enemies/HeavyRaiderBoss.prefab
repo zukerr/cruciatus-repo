@@ -9520,7 +9520,7 @@ GameObject:
   - component: {fileID: 2377710443922222387}
   - component: {fileID: 3132701116262074929}
   m_Layer: 11
-  m_Name: SFX
+  m_Name: SfxAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9533,12 +9533,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2145321279040002164}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2486727795145549462}
-  m_RootOrder: 2
+  m_Father: {fileID: 3531264578172720791}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &2377710443922222387
 AudioSource:
@@ -9681,7 +9681,7 @@ Transform:
   m_Children:
   - {fileID: 3619190069388058570}
   - {fileID: 2486727796619891792}
-  - {fileID: 7340212590284198979}
+  - {fileID: 3531264578172720791}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10020,6 +10020,7 @@ GameObject:
   - component: {fileID: 2486727796619891823}
   - component: {fileID: 2486727796619891820}
   - component: {fileID: 2486727795557255818}
+  - component: {fileID: 7525794050819596180}
   m_Layer: 11
   m_Name: HeavyRaiderEnemy
   m_TagString: Untagged
@@ -10131,6 +10132,7 @@ MonoBehaviour:
   deathParticleEffectPrefab: {fileID: 6452378264944235758, guid: 1c601b79ba9b90843b723f98deff6272,
     type: 3}
   rbody: {fileID: 2486727795145549463}
+  enemyLootTable: {fileID: 7525794050819596180}
   damage: 20
   meleeRange: 1
   dealDamageSFX: {fileID: 2377710443922222387}
@@ -10181,6 +10183,175 @@ MonoBehaviour:
   engageCombatProximityNonWall: 10
   engageCombatProximityThroughWall: 3
   modeAdjustmentPollingTime: 0.5
+  walkingSFX: {fileID: 2446217313764151893}
+--- !u!114 &7525794050819596180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2486727796619891794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e60f94b4c54754d9f51ad6e68b48ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootTable:
+  - {fileID: 11400000, guid: b4b64a83baab0314aac49a139b8b5c6d, type: 2}
+  - {fileID: 11400000, guid: b4b64a83baab0314aac49a139b8b5c6d, type: 2}
+  - {fileID: 11400000, guid: b4b64a83baab0314aac49a139b8b5c6d, type: 2}
+  - {fileID: 11400000, guid: b4b64a83baab0314aac49a139b8b5c6d, type: 2}
+  chancesTable:
+  - 0.3
+  - 0.3
+  - 0.3
+  - 0.3
+  uncommonModChance: 0.4
+  rareModChance: 0.5
+  enemyTransform: {fileID: 2486727795145549462}
+--- !u!1 &2783517468319632584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7225328385305494571}
+  - component: {fileID: 2446217313764151893}
+  - component: {fileID: 7417561526716000001}
+  m_Layer: 11
+  m_Name: SfxWalking
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7225328385305494571
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2783517468319632584}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3531264578172720791}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &2446217313764151893
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2783517468319632584}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6c0ca27d1ece469458aed48e6f28bcb8, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.75
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &7417561526716000001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2783517468319632584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7cb8cde205dd645bc153aca6bf2ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 2446217313764151893}
+  soundType: 0
+  volumeMultiplier: 0.1
 --- !u!1 &6830131557938024880
 GameObject:
   m_ObjectHideFlags: 0
@@ -10304,6 +10475,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shieldHoldingHandSpriteRenderer: {fileID: 2486727795336433236}
   disableHandSpriteOnShieldDestruction: 1
+--- !u!1 &7056785836454403573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3531264578172720791}
+  m_Layer: 11
+  m_Name: SFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3531264578172720791
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7056785836454403573}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7340212590284198979}
+  - {fileID: 7225328385305494571}
+  m_Father: {fileID: 2486727795145549462}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4902258673260907734
 PrefabInstance:
   m_ObjectHideFlags: 0

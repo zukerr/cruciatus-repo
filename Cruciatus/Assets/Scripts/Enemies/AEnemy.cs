@@ -15,6 +15,8 @@ public abstract class AEnemy : MonoBehaviour
 
     [SerializeField]
     protected Rigidbody2D rbody;
+    [SerializeField]
+    private EnemyLootTable enemyLootTable = null;
 
     protected Animator animator;
     private Vector2 startingPosition;
@@ -86,8 +88,10 @@ public abstract class AEnemy : MonoBehaviour
         {
             //play some nice particle effects
             //EffectsGlobalContainer.instance.InstantiateFierySparks(transform.position);
+            PlayerCharacter.instance.DamagablePlayer.ModifyHealth(PlayerCharacter.instance.StatsModule._StatsList.LifePerKill);
             Instantiate(deathParticleEffectPrefab, transform.position, deathParticleEffectPrefab.transform.rotation);
             damagableObject.HandleNameplateOnDeath();
+            enemyLootTable.DropItems();
             Destroy(rootGameObject);
         }
     }

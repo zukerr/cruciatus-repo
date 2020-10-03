@@ -19,8 +19,8 @@ public abstract class ASpell : ScriptableObject
     [SerializeField]
     protected float ignitionGeneration = 0;
 
-    public float CastingTime => castingTime;
-    public float Cooldown => cooldown;
+    public float CastingTime => castingTime * (1 - PlayerCharacter.instance.StatsModule._StatsList.CastTimeReduction);
+    public float Cooldown => cooldown * (1 - PlayerCharacter.instance.StatsModule._StatsList.CooldownReduction);
     public Sprite Icon => icon;
 
     public abstract void Cast();

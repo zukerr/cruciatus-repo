@@ -9,14 +9,24 @@ public class LiveSpellCooldown
 
     public float MaxCooldown => Spell.Cooldown;
 
+    private bool eternal = false;
+
     public LiveSpellCooldown(ASpell spell)
     {
         Spell = spell;
         CurrentCooldown = spell.Cooldown;
+        if(spell.Cooldown == GlobalVariables.ETERNAL_COOLDOWN)
+        {
+            eternal = true;
+        }
     }
 
     public void ModifyCurrentCooldown(float value)
     {
+        if(eternal)
+        {
+            return;
+        }
         CurrentCooldown += value;
         if (CurrentCooldown < 0)
         {

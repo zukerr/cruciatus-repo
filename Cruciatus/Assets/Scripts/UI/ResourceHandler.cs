@@ -17,10 +17,7 @@ public class ResourceHandler : MonoBehaviour
     private bool animating = false;
     private bool animBreak = false;
 
-    protected virtual void Start()
-    {
-
-    }
+    protected virtual void Start() { }
 
     protected float GetNormalizedResourceValue()
     {
