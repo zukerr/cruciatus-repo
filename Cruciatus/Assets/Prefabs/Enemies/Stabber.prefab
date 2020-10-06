@@ -337,7 +337,7 @@ MonoBehaviour:
   lootTable:
   - {fileID: 11400000, guid: b4b64a83baab0314aac49a139b8b5c6d, type: 2}
   chancesTable:
-  - 0.3
+  - 1
   uncommonModChance: 0.7
   rareModChance: 0.1
   enemyTransform: {fileID: 4901290869214230170}

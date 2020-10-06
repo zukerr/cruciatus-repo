@@ -7,8 +7,20 @@ public class SingleStatSuffix : AItemMod
     public float TrueValue { get; private set; }
     public StatsEnum StatEnum { get; private set; }
 
-    public SingleStatSuffix(StatsEnum statEnum, float minValue, float maxValue, string suffixString, bool roundValues = false, bool roundValuesToHalf = false, bool percentage = false)
+    private bool valueIsPercentage = false;
+
+    public SingleStatSuffix
+        (
+        StatsEnum statEnum,
+        float minValue, 
+        float maxValue, 
+        string suffixString, 
+        bool roundValues = false, 
+        bool roundValuesToHalf = false, 
+        bool percentage = false
+        ) : base()
     {
+        valueIsPercentage = percentage;
         StatEnum = statEnum;
         TrueValue = Random.Range(minValue, maxValue);
         if(roundValues)
@@ -95,5 +107,24 @@ public class SingleStatSuffix : AItemMod
             default:
                 break;
         }
+    }
+
+    protected override void SetItemRarity()
+    {
+        ItemModRarity = ItemRarity.Uncommon;
+    }
+
+    public override string GetDescriptionString()
+    {
+        string adjustedStr;
+        if(valueIsPercentage)
+        {
+            adjustedStr = (TrueValue * 100).ToString() + "%";
+        }
+        else
+        {
+            adjustedStr = TrueValue.ToString();
+        }
+        return "+" + adjustedStr + " " + StatsList.StatsEnumToString(StatEnum) + "\n";
     }
 }

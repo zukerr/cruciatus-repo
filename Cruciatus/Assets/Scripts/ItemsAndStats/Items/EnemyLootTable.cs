@@ -17,13 +17,7 @@ public class EnemyLootTable : MonoBehaviour
 
     private void DropItem(AItem itemBase, AItemMod itemMod)
     {
-        GameObject instantiatedItem = Instantiate
-            (
-            InventoryUI.instance.GroundItemPrefab, 
-            enemyTransform.position, 
-            InventoryUI.instance.GroundItemPrefab.transform.rotation
-            );
-        instantiatedItem.GetComponent<GroundItem>().SetItemContent(itemBase, itemMod);
+        InventoryUI.instance.DropItem(itemBase, itemMod, enemyTransform.position);
     }
 
     public void DropItems()

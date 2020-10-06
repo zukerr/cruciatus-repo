@@ -10,6 +10,10 @@ public class GroundItem : MonoBehaviour
     private TextMeshProUGUI itemText = null;
     [SerializeField]
     private Canvas nameplateCanvas = null;
+    [SerializeField]
+    private float pickupMaxDistance = 1f;
+    [SerializeField]
+    private BoxCollider2D boxNameplateCollider = null;
 
     private AItem baseItemContent;
     private AItemMod itemModContent;
@@ -23,13 +27,25 @@ public class GroundItem : MonoBehaviour
         if(itemMod != null)
         {
             itemText.text += " of the " + itemMod.SuffixString;
+            itemText.color = itemMod.GetRarityColor();
         }
+
+        boxNameplateCollider.size = new Vector2(itemText.preferredWidth, itemText.preferredHeight);
     }
 
     public void PickupItem()
     {
-        Debug.Log("Player picked up item.");
-        InventoryUI.instance.AddItemToInventory(baseItemContent, itemModContent);
-        Destroy(gameObject);
+        if(Vector3.Distance(PlayerCharacter.instance.transform.position, transform.position) <= pickupMaxDistance)
+        {
+            Debug.Log("Player picked up item.");
+            InventoryUI.instance.AddItemToInventory(baseItemContent, itemModContent);
+            Destroy(gameObject);
+        }
+        else
+        {
+            Debug.Log("Player is too far away to pickup the item!");
+            TextDisplayPlayerInfo.instance.DisplayStringInMsgBoxForTime("You are too far away to pick up the item.");
+            GlobalSoundEffects.instance.PlayItemTooFar();
+        }
     }
 }

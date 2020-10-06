@@ -19,6 +19,8 @@ public class PlayerControls : MonoBehaviour
     private KeyCode basicAttackKey = KeyCode.Mouse0;
     [SerializeField]
     private KeyCode interactKey = KeyCode.Space;
+    [SerializeField]
+    private KeyCode inventoryKey = KeyCode.I;
     //private KeyCode movementKey = KeyCode.Mouse0;
 
     private bool escMenuOn = false;
@@ -27,7 +29,7 @@ public class PlayerControls : MonoBehaviour
 
     private void Awake()
     {
-        InventoryUI.instance = inventory;
+        InventoryUI.SetupStatics(inventory);
     }
 
     // Update is called once per frame
@@ -39,7 +41,10 @@ public class PlayerControls : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    ToggleEscMenu(true);
+                    if (!inventory.gameObject.activeSelf)
+                        ToggleEscMenu(true);
+                    else
+                        ToggleInventory();
                 }
                 if (Input.GetKeyDown(basicAttackKey))
                 {
@@ -54,6 +59,10 @@ public class PlayerControls : MonoBehaviour
                 if (Input.GetKeyDown(interactKey))
                 {
                     PlayerInteractableManagement.instance.PlayerInteract();
+                }
+                if(Input.GetKeyDown(inventoryKey))
+                {
+                    ToggleInventory();
                 }
                 HandleKeybinds();
             }
@@ -119,5 +128,17 @@ public class PlayerControls : MonoBehaviour
         lockpickingOn = true;
         lockpicking.SetupOscilators(oscilatorsCount, root);
         lockpicking.gameObject.SetActive(true);
+    }
+
+    private void ToggleInventory()
+    {
+        if(inventory.gameObject.activeSelf)
+        {
+            inventory.gameObject.SetActive(false);
+        }
+        else
+        {
+            inventory.gameObject.SetActive(true);
+        }
     }
 }

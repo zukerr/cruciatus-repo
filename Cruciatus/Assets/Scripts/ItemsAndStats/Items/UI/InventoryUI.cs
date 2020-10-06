@@ -14,9 +14,12 @@ public class InventoryUI : MonoBehaviour
     private EquipmentUI equipmentModule = null;
     [SerializeField]
     private GameObject groundItemPrefab = null;
+    [SerializeField]
+    private ItemHighlightDisplay itemTooltip = null;
 
     public EquipmentUI EquipmentModule => equipmentModule;
     public GameObject GroundItemPrefab => groundItemPrefab;
+    public ItemHighlightDisplay ItemTooltip => itemTooltip;
 
     // Start is called before the first frame update
     void Start()
@@ -24,10 +27,26 @@ public class InventoryUI : MonoBehaviour
         //instance = this;
     }
 
+    public static void SetupStatics(InventoryUI inventoryInstance)
+    {
+        instance = inventoryInstance;
+    }
+
     public void AddItemToInventory(AItem item, AItemMod itemMod)
     {
         GameObject newItem = Instantiate(itemPrefab, itemContainer.transform);
         newItem.GetComponent<ItemUI>().SetItemContent(item, itemMod);
+    }
+
+    public void DropItem(AItem itemBase, AItemMod itemMod, Vector3 position)
+    {
+        GameObject instantiatedItem = Instantiate
+            (
+            groundItemPrefab,
+            position,
+            groundItemPrefab.transform.rotation
+            );
+        instantiatedItem.GetComponent<GroundItem>().SetItemContent(itemBase, itemMod);
     }
 
     private void ActivateAllItems()

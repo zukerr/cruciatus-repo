@@ -17,6 +17,8 @@ public class ItemUI : MonoBehaviour
 
     private AItem baseItemContent;
     private AItemMod itemModContent;
+    private string fullItemName;
+
     public bool Equipped { get; private set; } = false;
 
     public AItem BaseItemContent => baseItemContent;
@@ -36,6 +38,12 @@ public class ItemUI : MonoBehaviour
         if(itemModContent != null)
         {
             nameText.text += " of the " + itemModContent.SuffixString;
+            fullItemName = nameText.text;
+            nameText.color = itemMod.GetRarityColor();
+        }
+        else
+        {
+            fullItemName = BaseItemContent.ItemName;
         }
     }
 
@@ -60,5 +68,35 @@ public class ItemUI : MonoBehaviour
                 InventoryUI.instance.EquipmentModule.UnequipItem(this);
             }
         }
+    }
+
+    public void HighlightItem()
+    {
+        string descStr;
+        Color rarityColor;
+        if(itemModContent != null)
+        {
+            descStr = itemModContent.GetDescriptionString();
+            rarityColor = itemModContent.GetRarityColor();
+        }
+        else
+        {
+            descStr = "";
+            rarityColor = Color.white;
+        }
+        InventoryUI.instance.ItemTooltip.DisplayItem
+            (
+            baseItemContent.ItemIcon, 
+            fullItemName,
+            rarityColor,
+            baseItemContent.GetItemTypeString(), 
+            baseItemContent.ItemValue.ToString(), 
+            descStr
+            );
+    }
+
+    public void StopHighlightingItem()
+    {
+        InventoryUI.instance.ItemTooltip.ClearTooltip();
     }
 }

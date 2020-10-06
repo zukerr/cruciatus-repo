@@ -8,6 +8,8 @@ public class GlobalSoundEffects : MonoBehaviour
 
     [SerializeField]
     private List<AudioSource> spellNotReady = null;
+    [SerializeField]
+    private AudioSource itemTooFarAway = null;
 
     // Start is called before the first frame update
     void Start()
@@ -19,5 +21,10 @@ public class GlobalSoundEffects : MonoBehaviour
     {
         int rng = Random.Range(0, spellNotReady.Count);
         spellNotReady[rng].Play();
+    }
+
+    public void PlayItemTooFar()
+    {
+        itemTooFarAway.Play();
     }
 }
