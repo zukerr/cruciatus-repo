@@ -27,10 +27,10 @@ public class EnemyLootTable : MonoBehaviour
             Debug.LogError("Loot table on enemy: " + enemyTransform.name + " is not set up correctly.");
             return;
         }
-        float rng = Random.Range(0f, 1f);
         for (int i = 0; i < lootTable.Count; i++)
         {
-            if(rng < chancesTable[i])
+            float rng = Random.Range(0f, 1f);
+            if (rng < chancesTable[i])
             {
                 //roll mods
                 AItemMod tempItemMod = RollItemMods();

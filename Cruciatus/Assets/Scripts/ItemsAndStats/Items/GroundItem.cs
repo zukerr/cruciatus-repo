@@ -14,6 +14,8 @@ public class GroundItem : MonoBehaviour
     private float pickupMaxDistance = 1f;
     [SerializeField]
     private BoxCollider2D boxNameplateCollider = null;
+    [SerializeField]
+    private SpriteRenderer groundSpriteRenderer = null;
 
     private AItem baseItemContent;
     private AItemMod itemModContent;
@@ -28,6 +30,7 @@ public class GroundItem : MonoBehaviour
         {
             itemText.text += " of the " + itemMod.SuffixString;
             itemText.color = itemMod.GetRarityColor();
+            groundSpriteRenderer.color = itemMod.GetRarityColor();
         }
 
         boxNameplateCollider.size = new Vector2(itemText.preferredWidth, itemText.preferredHeight);

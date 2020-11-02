@@ -10063,8 +10063,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootTable:
-  - {fileID: 11400000, guid: b4b64a83baab0314aac49a139b8b5c6d, type: 2}
+  - {fileID: 11400000, guid: 1634c0350bbcf4c4485dbe9d0367f430, type: 2}
+  - {fileID: 11400000, guid: 9e60c8909c47b294b92e60145a9b8882, type: 2}
+  - {fileID: 11400000, guid: 011c3007def2ca846b8145c4cab26efc, type: 2}
+  - {fileID: 11400000, guid: b81f83b8c5362ae4ca9b47c50ac47947, type: 2}
+  - {fileID: 11400000, guid: 203840ad69c9fe94e85649d57b47a9f7, type: 2}
   chancesTable:
+  - 0.3
+  - 0.3
+  - 0.3
+  - 0.3
   - 0.3
   uncommonModChance: 0.7
   rareModChance: 0.1

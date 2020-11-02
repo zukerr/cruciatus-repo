@@ -10197,15 +10197,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootTable:
-  - {fileID: 11400000, guid: b4b64a83baab0314aac49a139b8b5c6d, type: 2}
-  - {fileID: 11400000, guid: b4b64a83baab0314aac49a139b8b5c6d, type: 2}
-  - {fileID: 11400000, guid: b4b64a83baab0314aac49a139b8b5c6d, type: 2}
-  - {fileID: 11400000, guid: b4b64a83baab0314aac49a139b8b5c6d, type: 2}
+  - {fileID: 11400000, guid: 1634c0350bbcf4c4485dbe9d0367f430, type: 2}
+  - {fileID: 11400000, guid: ac0d6c5df4aaba54c99ca0d2ef1153e9, type: 2}
+  - {fileID: 11400000, guid: e4683dac6a1b6724e8f169679e742510, type: 2}
+  - {fileID: 11400000, guid: 011c3007def2ca846b8145c4cab26efc, type: 2}
+  - {fileID: 11400000, guid: 7268d3c4e0bf7fb46b5d9bf9f04ff4e9, type: 2}
+  - {fileID: 11400000, guid: 1634c0350bbcf4c4485dbe9d0367f430, type: 2}
+  - {fileID: 11400000, guid: 500c33d6a1918bb4a916caed15352b09, type: 2}
+  - {fileID: 11400000, guid: 797a90b7f2546414385b47e241a89285, type: 2}
   chancesTable:
-  - 0.3
-  - 0.3
-  - 0.3
-  - 0.3
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
   uncommonModChance: 0.4
   rareModChance: 0.5
   enemyTransform: {fileID: 2486727795145549462}

@@ -66,47 +66,7 @@ public class SingleStatSuffix : AItemMod
             theValue = -theValue;
         }
 
-        switch (StatEnum)
-        {
-            case StatsEnum.Spellpower:
-                targetStatsList.Spellpower += theValue;
-                break;
-            case StatsEnum.CriticalHitChance:
-                targetStatsList.CriticalHitChance += theValue;
-                break;
-            case StatsEnum.CriticalHitDamage:
-                targetStatsList.CriticalHitDamage += theValue;
-                break;
-            case StatsEnum.CooldownReduction:
-                targetStatsList.CooldownReduction += theValue;
-                break;
-            case StatsEnum.CastTimeReduction:
-                targetStatsList.CastTimeReduction += theValue;
-                break;
-            case StatsEnum.Armor:
-                targetStatsList.Armor += theValue;
-                break;
-            case StatsEnum.MagicResistance:
-                targetStatsList.MagicResistance += theValue;
-                break;
-            case StatsEnum.MaxLife:
-                targetStatsList.MaxLife += theValue;
-                break;
-            case StatsEnum.Lifelink:
-                targetStatsList.Lifelink += theValue;
-                break;
-            case StatsEnum.LifeRegenerationPercentage:
-                targetStatsList.LifeRegenPercentage += theValue;
-                break;
-            case StatsEnum.LifeRegenerationIntervalReduction:
-                targetStatsList.LifeRegenIntervalReduction += theValue;
-                break;
-            case StatsEnum.LifePerKill:
-                targetStatsList.LifePerKill += theValue;
-                break;
-            default:
-                break;
-        }
+        CharacterStatProcessor.GetStat(StatEnum).AddValueToStatList(targetStatsList, theValue);
     }
 
     protected override void SetItemRarity()

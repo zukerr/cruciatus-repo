@@ -206,6 +206,7 @@ MonoBehaviour:
   nameplateCanvas: {fileID: 448953929824776264}
   pickupMaxDistance: 5
   boxNameplateCollider: {fileID: 5724833497670087664}
+  groundSpriteRenderer: {fileID: 228056844331480655}
 --- !u!50 &4615972373531874333
 Rigidbody2D:
   serializedVersion: 4

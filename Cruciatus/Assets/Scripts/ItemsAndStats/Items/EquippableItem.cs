@@ -4,53 +4,56 @@ using UnityEngine;
 
 public enum ItemSlot
 {
-    O1,
-    O2,
-    O3,
-    O4,
-    O5,
-    D1,
-    D2,
-    D3,
-    U1,
-    U2
+    Ruby,
+    Morganite,
+    Pyrite,
+    Bixbite,
+    Hematite,
+    Amethyst,
+    Topaz,
+    Sapphire,
+    Aquamarine,
+    Emerald
 }
 
 [CreateAssetMenu(fileName = "NewEquippableItem", menuName = "Items/Equippable")]
 public class EquippableItem : AItem
 {
     [SerializeField]
-    private ItemSlot itemSlot = ItemSlot.O1;
+    private ItemSlot itemSlot = ItemSlot.Ruby;
 
     public ItemSlot _ItemSlot => itemSlot;
 
     public override string GetItemTypeString()
     {
+        /*
         switch (itemSlot)
         {
-            case ItemSlot.O1:
+            case ItemSlot.Ruby:
                 return "Gem O1";
-            case ItemSlot.O2:
+            case ItemSlot.Morganite:
                 return "Gem O2";
-            case ItemSlot.O3:
+            case ItemSlot.Pyrite:
                 return "Gem O3";
-            case ItemSlot.O4:
+            case ItemSlot.Bixbite:
                 return "Gem O4";
-            case ItemSlot.O5:
+            case ItemSlot.Hematite:
                 return "Gem O5";
-            case ItemSlot.D1:
+            case ItemSlot.Amethyst:
                 return "Gem D1";
-            case ItemSlot.D2:
+            case ItemSlot.Topaz:
                 return "Gem D2";
-            case ItemSlot.D3:
+            case ItemSlot.Sapphire:
                 return "Gem D3";
-            case ItemSlot.U1:
+            case ItemSlot.Aquamarine:
                 return "Gem U1";
-            case ItemSlot.U2:
+            case ItemSlot.Emerald:
                 return "Gem U2";
             default:
                 return "";
         }
+        */
+        return itemSlot.ToString();
     }
 
     public override ItemType GetItemType()

@@ -57,34 +57,6 @@ public class StatsList
 
     public static string StatsEnumToString(StatsEnum target)
     {
-        switch (target)
-        {
-            case StatsEnum.Spellpower:
-                return "Spellpower";
-            case StatsEnum.CriticalHitChance:
-                return "Critical Hit Chance";
-            case StatsEnum.CriticalHitDamage:
-                return "Critical Hit Damage";
-            case StatsEnum.CooldownReduction:
-                return "Cooldown Reduction";
-            case StatsEnum.CastTimeReduction:
-                return "Cast Time Reduction";
-            case StatsEnum.Armor:
-                return "Armor";
-            case StatsEnum.MagicResistance:
-                return "Magic Resistance";
-            case StatsEnum.MaxLife:
-                return "Max Life";
-            case StatsEnum.Lifelink:
-                return "Lifelink";
-            case StatsEnum.LifeRegenerationPercentage:
-                return "Life Regeneration Percentage";
-            case StatsEnum.LifeRegenerationIntervalReduction:
-                return "Life Regeneration Interval Reduction";
-            case StatsEnum.LifePerKill:
-                return "Life Per Kill";
-            default:
-                return "";
-        }
+        return CharacterStatProcessor.GetStat(target).GetStatName();
     }
 }
