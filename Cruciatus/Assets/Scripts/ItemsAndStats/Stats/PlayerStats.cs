@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    private const float armorDamageReductionFactor = 10f;
-    private const float mresDamageReductionFactor = 10f;
+    private const float ARMOR_DAMAGE_REDUCTION_FACTOR = 10f;
+    private const float MRES_DAMAGE_REDUCTION_FACTOR = 10f;
 
     private StatsList statsList = new StatsList();
 
@@ -48,14 +48,14 @@ public class PlayerStats : MonoBehaviour
 
     private float ApplyStatsToPhysDamageTaken(float baseDamage)
     {
-        float damageReduction = statsList.Armor / (statsList.Armor + (armorDamageReductionFactor * baseDamage));
+        float damageReduction = statsList.Armor / (statsList.Armor + (ARMOR_DAMAGE_REDUCTION_FACTOR * baseDamage));
         baseDamage *= (1 - damageReduction);
         return baseDamage;
     }
 
     private float ApplyStatsToMagicDamageTaken(float baseDamage)
     {
-        float damageReduction = statsList.MagicResistance / (statsList.MagicResistance + (mresDamageReductionFactor * baseDamage));
+        float damageReduction = statsList.MagicResistance / (statsList.MagicResistance + (MRES_DAMAGE_REDUCTION_FACTOR * baseDamage));
         baseDamage *= (1 - damageReduction);
         return baseDamage;
     }
