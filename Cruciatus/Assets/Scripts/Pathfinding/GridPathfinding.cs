@@ -26,6 +26,8 @@ public class GridPathfinding : MonoBehaviour
 
     public bool UseDiagonals => useDiagonals;
 
+    private bool isUsingPathfindingOptimization = false;
+
     private void Awake()
     {
         instance = this;
@@ -41,6 +43,7 @@ public class GridPathfinding : MonoBehaviour
         //walkableNodes = new List<NodePathfinding>();
         Debug.Log("x: " + tilemapBase.size.x + " y: " + tilemapBase.size.y);
         Debug.Log(tilemapBase.origin);
+        isUsingPathfindingOptimization = gameObject.GetComponent<PathfindingOptimization>() != null ? true : false;
         //CountTiles();
         /*
         foreach (Vector2Int tile in walkableTiles)
@@ -58,6 +61,36 @@ public class GridPathfinding : MonoBehaviour
     {
         
     }
+
+    public bool IsOptimizingLargeScaleCombat()
+    {
+        if (isUsingPathfindingOptimization)
+        {
+            //return true only if combat involves x or more enemies
+            if (PathfindingOptimization.instance.LargeScaleCombat())
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void HandleMobDeathOptimization()
+    {
+        if(isUsingPathfindingOptimization)
+        {
+            PathfindingOptimization.instance.MobExitedCombat();
+        }
+    }
+
+    public void HandleMobEnteredCombat()
+    {
+        if(isUsingPathfindingOptimization)
+        {
+            PathfindingOptimization.instance.MobEnteredCombat();
+        }
+    }
+
 
     private void ResetTiles()
     {

@@ -92,6 +92,7 @@ public abstract class AEnemy : MonoBehaviour
             Instantiate(deathParticleEffectPrefab, transform.position, deathParticleEffectPrefab.transform.rotation);
             damagableObject.HandleNameplateOnDeath();
             enemyLootTable.DropItems();
+            GridPathfinding.instance.HandleMobDeathOptimization();
             Destroy(rootGameObject);
         }
     }

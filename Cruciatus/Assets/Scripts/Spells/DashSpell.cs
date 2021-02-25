@@ -11,13 +11,15 @@ public class DashSpell : ASpell
     private float dashSpeed = 0f;
     [SerializeField]
     private GameObject particleEffectPrefab = null;
-
+    [SerializeField]
     private bool isDashing = false;
 
     public override void Cast()
     {
-        if(!isDashing)
+        Debug.Log("DashSpell: Before if!");
+        if (!isDashing)
         {
+            Debug.Log("DashSpell: Before casting coroutine!");
             PlayerCharacter.instance.StartCoroutine(DashCoroutine());
         }
     }
@@ -26,6 +28,7 @@ public class DashSpell : ASpell
     {
         isDashing = true;
         float trueDashLength = dashLength;
+        Debug.Log("DashSpell: Using dash!");
 
         //EffectsGlobalContainer.instance.InstantiateGreenBubbles(PlayerCharacter.instance.transform);
         GameObject effect = Instantiate(particleEffectPrefab, PlayerCharacter.instance.transform);
@@ -65,6 +68,8 @@ public class DashSpell : ASpell
             }
         }
 
+        Debug.Log($"DashSpell: true dash length = {trueDashLength}");
+
         float cTime = 0f;
         while (Vector3.Distance(startPosition, PlayerCharacter.instance.transform.position) < trueDashLength)
         {
@@ -90,6 +95,8 @@ public class DashSpell : ASpell
                 {
                     //break
                     trueDashLength = -1;
+
+                    Debug.Log("DashSpell: Breaking dash!");
                 }
             }
             

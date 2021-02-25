@@ -22,10 +22,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 709, y: 492}
-  m_MaxSize: {x: 18004, y: 14042}
+  m_MinSize: {x: 708, y: 492}
+  m_MaxSize: {x: 18003, y: 14042}
   vertical: 0
-  controlID: 2201
+  controlID: 25947
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 356
+    y: 302
     width: 1117
     height: 643
   m_ViewDataDictionary: {fileID: 0}
@@ -87,7 +87,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -139,10 +139,10 @@ MonoBehaviour:
     y: 0
     width: 1118
     height: 947
-  m_MinSize: {x: 201, y: 342}
-  m_MaxSize: {x: 4001, y: 8042}
+  m_MinSize: {x: 201, y: 321}
+  m_MaxSize: {x: 4001, y: 8021}
   vertical: 1
-  controlID: 2202
+  controlID: 25948
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -162,8 +162,8 @@ MonoBehaviour:
     y: 0
     width: 1118
     height: 283
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 5}
   m_Panes:
   - {fileID: 5}
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 19942
+  m_LastSelectedObjectID: 40848
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -552,7 +552,7 @@ MonoBehaviour:
     x: 0
     y: 73
     width: 1117
-    height: 313
+    height: 262
   m_ViewDataDictionary: {fileID: 0}
   m_PreviewResizer:
     m_CachedPref: -50
@@ -579,8 +579,8 @@ MonoBehaviour:
     y: 283
     width: 1118
     height: 664
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 11}
@@ -642,17 +642,17 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: 683b70a39643a5246bcd77994beed400
-  m_Gizmos: 1
-  m_SceneIsLit: 1
+  m_Gizmos: 0
+  m_SceneIsLit: 0
   m_SceneLighting: 1
   m_2DMode: 1
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -11.131618, y: -28.004885, z: 72.78516}
+    m_Target: {x: 75.543274, y: -21.524506, z: -20.467443}
     speed: 2
-    m_Value: {x: -11.131618, y: -28.004885, z: 72.78516}
+    m_Value: {x: 75.543274, y: -21.524506, z: -20.467443}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -702,9 +702,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 14.506698
+    m_Target: 40.074997
     speed: 2
-    m_Value: 14.506698
+    m_Value: 40.074997
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -753,7 +753,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 2153
+  controlID: 25919
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -811,7 +811,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: bee8ffffc2e8ffffcce8ffff60fbffff2e3a0000
+      m_ExpandedIDs: cc4ffeff4c51feff505bfeff5c5bfeff0262feff2a78feff60fbffff06390000d8990000d29e00004a9f00004ea00000d8a0000002a10000aaa3000044a40000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -854,8 +854,8 @@ MonoBehaviour:
     y: 546
     width: 354
     height: 401
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -902,20 +902,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/ScriptableObjects/Spells
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/ScriptableObjects/Spells
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Zuker\Programming\Game Design\Cruciatus\repo\cruciatus-repo\Cruciatus
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 44}
-    m_SelectedIDs: be480000
-    m_LastClickedID: 18622
-    m_ExpandedIDs: 00000000a0480000a248000000ca9a3b
+    scrollPos: {x: 0, y: 132}
+    m_SelectedIDs: bc480000
+    m_LastClickedID: 18620
+    m_ExpandedIDs: 00000000a0480000a2480000be48000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -968,9 +968,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 8e3f0000
+    m_LastClickedInstanceID: 16270
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 3c460000c851fcff2e3e000012ddffff16460000f23e0000a03b0000a64f0000863f0000e64c000000000000fed9ffff
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1333,5 +1333,5 @@ MonoBehaviour:
     m_ControlHash: 1412526313
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: -1
+  m_LastInspectedObjectInstanceID: 16270
   m_LastVerticalScrollValue: 0

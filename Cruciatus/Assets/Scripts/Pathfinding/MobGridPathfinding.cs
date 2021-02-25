@@ -129,7 +129,20 @@ public class MobGridPathfinding : MonoBehaviour
             }
             playerStartingTile = new Vector2Int(playerStartingTile.x + tempX, playerStartingTile.y + tempY);
             SetupPlayerTileCorners();
+
+            if (GridPathfinding.instance.IsOptimizingLargeScaleCombat())
+            {
+                if (!PathfindingOptimization.instance.GetPathfindingInternalCooldown())
+                {
+                    return;
+                }
+                else
+                {
+                    PathfindingOptimization.instance.PopCooldownExecutePathfinding();
+                }
+            }
             StopAllCoroutines();
+            //Debug.Log("MobGridPathfinding: About to start coroutine GoAlongPathCoroutine from PlayerTileUpdate function.");
             StartCoroutine(GoAlongPathCoroutine());
         }
     }
@@ -227,6 +240,27 @@ public class MobGridPathfinding : MonoBehaviour
 
     private void EnterAStar()
     {
+        if(pathfindingMode == PathfindingMode.AStar)
+        {
+            return;
+        }
+
+        if(pathfindingMode == PathfindingMode.Passive)
+        {
+            GridPathfinding.instance.HandleMobEnteredCombat();
+        }
+
+        /*
+        if (GridPathfinding.instance.IsUsingPathfindingOptimization())
+        {
+            if (!PathfindingOptimization.instance.AbleToRegisterPathfindingMob())
+            {
+                pathfindingMode = PathfindingMode.Follow;
+                return;
+            }
+        }
+        */
+
         pathfindingMode = PathfindingMode.AStar;
         StopAllCoroutines();
         StartCoroutine(GoAlongPathCoroutine());
@@ -267,6 +301,15 @@ public class MobGridPathfinding : MonoBehaviour
         {
             if (!IsWallInProximity(changeToFollowWallProximity))
             {
+                /*
+                if(GridPathfinding.instance.IsUsingPathfindingOptimization())
+                {
+                    if (pathfindingMode == PathfindingMode.AStar)
+                    {
+                        PathfindingOptimization.instance.UnregisterPathfindingMob();
+                    }
+                }
+                */
                 pathfindingMode = PathfindingMode.Follow;
             }
             else
