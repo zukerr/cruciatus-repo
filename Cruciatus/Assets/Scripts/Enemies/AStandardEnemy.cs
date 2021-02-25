@@ -11,6 +11,21 @@ public abstract class AStandardEnemy : AEnemy
 
     protected abstract float GetRange();
 
+    protected override void Start()
+    {
+        base.Start();
+        damage *= DungeonSettings.instance.EnemyDamageMultiplier;
+    }
+
+    protected override void OnDeath()
+    {
+        base.OnDeath();
+        if(gameObject.GetComponent<ACountContribution>() != null)
+        {
+            gameObject.GetComponent<ACountContribution>().AddCount();
+        }
+    }
+
     protected override void AttackPlayer()
     {
         if (Vector3.Distance(rootGameObject.transform.position, PlayerCharacter.instance.transform.position) > GetRange())

@@ -370,6 +370,7 @@ GameObject:
   - component: {fileID: 1820536851653331244}
   - component: {fileID: 1820536850567632842}
   - component: {fileID: 3642823032296688090}
+  - component: {fileID: 2684987470850914345}
   m_Layer: 11
   m_Name: HeavyRaiderEnemy
   m_TagString: Untagged
@@ -560,6 +561,20 @@ MonoBehaviour:
   uncommonModChance: 0.7
   rareModChance: 0.1
   enemyTransform: {fileID: 1820536850447465430}
+--- !u!114 &2684987470850914345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820536851653331218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daff98e686b33dc41a9cbdd43488df97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyContributesToCount: 1
+  countPercentage: 4.22
 --- !u!1 &1875130669067311971
 GameObject:
   m_ObjectHideFlags: 0
@@ -10638,12 +10653,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e9d0ebd06dc91945a2584b58590ae25, type: 3}
---- !u!224 &718477448646181514 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8516764820957319964, guid: 8e9d0ebd06dc91945a2584b58590ae25,
-    type: 3}
-  m_PrefabInstance: {fileID: 9207938285771100566}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2279294617762499435 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6946949163366652669, guid: 8e9d0ebd06dc91945a2584b58590ae25,
@@ -10668,3 +10677,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a9eeb7ebef27849b6234009bb76fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &718477448646181514 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8516764820957319964, guid: 8e9d0ebd06dc91945a2584b58590ae25,
+    type: 3}
+  m_PrefabInstance: {fileID: 9207938285771100566}
+  m_PrefabAsset: {fileID: 0}

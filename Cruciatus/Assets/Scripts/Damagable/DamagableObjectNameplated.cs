@@ -10,6 +10,12 @@ public class DamagableObjectNameplated : DamagableObject
     [SerializeField]
     private MobGridPathfinding pathfindingModule = null;
 
+    protected override void Start()
+    {
+        maxHealth *= DungeonSettings.instance.EnemyHealthMultiplier;
+        base.Start();
+    }
+
     public override void ModifyHealth(float value)
     {
         if(value < 0)

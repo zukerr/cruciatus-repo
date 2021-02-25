@@ -10021,6 +10021,7 @@ GameObject:
   - component: {fileID: 2486727796619891820}
   - component: {fileID: 2486727795557255818}
   - component: {fileID: 7525794050819596180}
+  - component: {fileID: 3684334223672889790}
   m_Layer: 11
   m_Name: HeavyRaiderEnemy
   m_TagString: Untagged
@@ -10217,6 +10218,18 @@ MonoBehaviour:
   uncommonModChance: 0.4
   rareModChance: 0.5
   enemyTransform: {fileID: 2486727795145549462}
+--- !u!114 &3684334223672889790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2486727796619891794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89f48e69615a2164595eda0b627c6200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2783517468319632584
 GameObject:
   m_ObjectHideFlags: 0

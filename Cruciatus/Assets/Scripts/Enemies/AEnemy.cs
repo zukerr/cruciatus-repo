@@ -25,7 +25,7 @@ public abstract class AEnemy : MonoBehaviour
     public DamagableObject DamagableEnemy => damagableObject;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         animator = GetComponent<Animator>();
         startingPosition = rbody.position;
@@ -93,9 +93,11 @@ public abstract class AEnemy : MonoBehaviour
             damagableObject.HandleNameplateOnDeath();
             enemyLootTable.DropItems();
             GridPathfinding.instance.HandleMobDeathOptimization();
+            OnDeath();
             Destroy(rootGameObject);
         }
     }
 
+    protected virtual void OnDeath() { }
     protected abstract void AttackPlayer();
 }

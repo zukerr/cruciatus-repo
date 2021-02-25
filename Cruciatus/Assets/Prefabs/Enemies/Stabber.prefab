@@ -158,6 +158,7 @@ GameObject:
   - component: {fileID: 4901290868004275296}
   - component: {fileID: 4901290869100599942}
   - component: {fileID: 470231098762783217}
+  - component: {fileID: 4548532178435960842}
   m_Layer: 11
   m_Name: StabberEnemy
   m_TagString: Untagged
@@ -349,6 +350,20 @@ MonoBehaviour:
   uncommonModChance: 0.7
   rareModChance: 0.1
   enemyTransform: {fileID: 4901290869214230170}
+--- !u!114 &4548532178435960842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4901290868004275294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daff98e686b33dc41a9cbdd43488df97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyContributesToCount: 1
+  countPercentage: 1.3
 --- !u!1 &4901290868429317313
 GameObject:
   m_ObjectHideFlags: 0
