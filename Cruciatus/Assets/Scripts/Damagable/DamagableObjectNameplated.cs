@@ -9,10 +9,15 @@ public class DamagableObjectNameplated : DamagableObject
     private NameplateHandler nameplateHandler = null;
     [SerializeField]
     private MobGridPathfinding pathfindingModule = null;
+    [SerializeField]
+    private bool maxHealthScalesWithDungeonLevel = true;
 
     protected override void Start()
     {
-        maxHealth *= DungeonSettings.instance.EnemyHealthMultiplier;
+        if(maxHealthScalesWithDungeonLevel)
+        {
+            maxHealth *= DungeonSettings.instance.EnemyHealthMultiplier;
+        }
         base.Start();
     }
 

@@ -49,7 +49,10 @@ public class PlayerControls : MonoBehaviour
                 if (Input.GetKeyDown(basicAttackKey))
                 {
                     //Debug.Log("LMB DOWN");
-                    PlayerCharacter.instance.BasicAttackModule.BasicAttackStart();
+                    if(!inventory.gameObject.activeSelf)
+                    {
+                        PlayerCharacter.instance.BasicAttackModule.BasicAttackStart();
+                    }
                 }
                 if (Input.GetKeyUp(basicAttackKey))
                 {

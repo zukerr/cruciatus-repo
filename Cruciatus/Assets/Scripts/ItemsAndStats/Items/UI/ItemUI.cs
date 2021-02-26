@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
-public class ItemUI : MonoBehaviour
+public class ItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField]
     private TextMeshProUGUI nameText = null;
@@ -98,5 +99,15 @@ public class ItemUI : MonoBehaviour
     public void StopHighlightingItem()
     {
         InventoryUI.instance.ItemTooltip.ClearTooltip();
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        HighlightItem();
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        StopHighlightingItem();
     }
 }

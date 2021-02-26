@@ -44,11 +44,14 @@ public class NodePathfinding
 
     public bool MyEquals(NodePathfinding other)
     {
-        if(this.GridX == other.GridX)
+        if(other != null)
         {
-            if(this.GridY == other.GridY)
+            if (this.GridX == other.GridX)
             {
-                return true;
+                if (this.GridY == other.GridY)
+                {
+                    return true;
+                }
             }
         }
         return false;

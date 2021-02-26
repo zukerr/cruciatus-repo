@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -64,6 +65,7 @@ public class InventoryUI : MonoBehaviour
 
     public void DisplayEquippedOnly()
     {
+        /*
         ActivateAllItems();
         for (int i = 0; i < itemContainer.transform.childCount; i++)
         {
@@ -72,5 +74,49 @@ public class InventoryUI : MonoBehaviour
                 itemContainer.transform.GetChild(i).gameObject.SetActive(false);
             }
         }
+        */
+
+        FilterItems(item => item.Equipped);
+    }
+
+    private void FilterItems(Func<ItemUI, bool> filterPredicate)
+    {
+        ActivateAllItems();
+        for (int i = 0; i < itemContainer.transform.childCount; i++)
+        {
+            if(itemContainer.transform.GetChild(i).GetComponent<ItemUI>() == null)
+            {
+                Debug.Log("InventoryUI: Item is null.");
+            }
+            if (itemContainer.transform.GetChild(i).GetComponent<ItemUI>().ItemModContent == null)
+            {
+                Debug.Log("InventoryUI: Item mod content is null.");
+            }
+
+            if (!filterPredicate(itemContainer.transform.GetChild(i).GetComponent<ItemUI>()))
+            {
+                itemContainer.transform.GetChild(i).gameObject.SetActive(false);
+            }
+        }
+    }
+     
+    public void DisplayCommonOnly()
+    {
+        FilterItems(item => item.ItemModContent == null);
+    }
+
+    public void DisplayUncommonOnly()
+    {
+        FilterItems(item => (item.ItemModContent != null) && (item.ItemModContent.ItemModRarity == ItemRarity.Uncommon));
+    }
+
+    public void DisplayRareOnly()
+    {
+        FilterItems(item => (item.ItemModContent != null) && (item.ItemModContent.ItemModRarity == ItemRarity.Rare));
+    }
+
+    public void DisplayLegendaryOnly()
+    {
+        FilterItems(item => (item.ItemModContent != null) && (item.ItemModContent.ItemModRarity == ItemRarity.Legendary));
     }
 }
