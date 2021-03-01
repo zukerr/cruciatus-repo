@@ -572,6 +572,3 @@ C:\Users\Zuker\Programming\Game Design\Cruciatus\repo\cruciatus-repo\Cruciatus\o
 C:\Users\Zuker\Programming\Game Design\Cruciatus\repo\cruciatus-repo\Cruciatus\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\Zuker\Programming\Game Design\Cruciatus\repo\cruciatus-repo\Cruciatus\obj\Debug\Assembly-CSharp.dll
 C:\Users\Zuker\Programming\Game Design\Cruciatus\repo\cruciatus-repo\Cruciatus\obj\Debug\Assembly-CSharp.pdb
-C:\Users\Zuker\Programming\Game Design\Cruciatus\repo\cruciatus-repo\Cruciatus\Temp\bin\Debug\nunit.framework.dll
-C:\Users\Zuker\Programming\Game Design\Cruciatus\repo\cruciatus-repo\Cruciatus\Temp\bin\Debug\nunit.framework.pdb
-C:\Users\Zuker\Programming\Game Design\Cruciatus\repo\cruciatus-repo\Cruciatus\Temp\bin\Debug\nunit.framework.xml

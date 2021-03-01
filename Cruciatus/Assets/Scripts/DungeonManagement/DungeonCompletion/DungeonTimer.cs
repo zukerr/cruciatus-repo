@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class DungeonTimer : MonoBehaviour
 {
+    public static bool TimeIsUp { get; private set; } = false;
+    
+    public UniversalSubject TimeIsUpEventHandle { get; private set; }
+
+    private void Awake()
+    {
+        TimeIsUpEventHandle = new UniversalSubject();
+    }
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         GetComponent<DungeonUI>().SetMaxTimerValue(DungeonSettings.instance.DungeonTimer);
         StartCoroutine(DungeonTimerCoroutine());
@@ -21,5 +30,7 @@ public class DungeonTimer : MonoBehaviour
             GetComponent<DungeonUI>().SetCurrentTimerValue(cTime);
             yield return null;
         }
+        TimeIsUp = true;
+        TimeIsUpEventHandle.Notify();
     }
 }

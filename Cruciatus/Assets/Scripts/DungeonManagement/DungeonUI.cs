@@ -17,6 +17,8 @@ public class DungeonUI : MonoBehaviour
     private Image timerProgressBar = null;
     [SerializeField]
     private TextMeshProUGUI timerText = null;
+    [SerializeField]
+    private TextMeshProUGUI levelText = null;
 
     private float timerMaxValue;
 
@@ -44,5 +46,10 @@ public class DungeonUI : MonoBehaviour
         int seconds = (int)value % 60;
         float miliseconds = value - (int)value;
         timerText.text = minutes + ":" + seconds.ToString("00") + ":" + miliseconds.ToString(".00").Substring(1);
+    }
+
+    public void SetLevelValue(int value)
+    {
+        levelText.text = "Level: " + value;
     }
 }

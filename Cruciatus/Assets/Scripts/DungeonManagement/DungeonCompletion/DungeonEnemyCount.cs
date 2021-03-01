@@ -50,4 +50,16 @@ public class DungeonEnemyCount : MonoBehaviour
         currentBossCounter++;
         GetComponent<DungeonUI>().SetBossCount(currentBossCounter, bossesInDungeon);
     }
+
+    public bool DungeonComplete()
+    {
+        if(currentBossCounter == bossesInDungeon)
+        {
+            if(currentEnemyContributionCount == maxContributionCount)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }

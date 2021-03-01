@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class LockableChest : ALockable
 {
+    [SerializeField]
+    private EnemyLootTable lootTable = null;
+
     public override void AfterUnlock()
     {
-        throw new System.NotImplementedException();
-    }
-
-    public override void Interact()
-    {
-        throw new System.NotImplementedException();
+        base.AfterUnlock();
+        //play chest unlock animation, particle effects, drop items
+        lootTable.DropItems();
+        Destroy(gameObject);
     }
 }

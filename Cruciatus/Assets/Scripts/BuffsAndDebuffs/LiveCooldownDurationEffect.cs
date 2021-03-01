@@ -56,4 +56,12 @@ public class LiveCooldownDurationEffect
     {
         CurrentDuration = MaxDuration;
     }
+
+    public void OnOwnerTick()
+    {
+        if (DurationEffect is ATickingDurationEffect)
+        {
+            (DurationEffect as ATickingDurationEffect).OnOwnerTick(CurrentDuration);
+        }
+    }
 }

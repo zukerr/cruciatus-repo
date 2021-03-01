@@ -14,6 +14,8 @@ public class GlobalVariables
     public const int PLAYER_TRIGGERS_LAYER_INDEX = 15;
     public const float ETERNAL_COOLDOWN = 9999f;
     public const int EQUIPMENT_SLOTS_COUNT = 10;
+    public const int SORTING_LAYER_BEHIND_UI = 99;
+    public const int SORTING_LAYER_IN_FRONT_OF_UI = 101;
 
     public static Vector3 GetMouseWorldPosition()
     {

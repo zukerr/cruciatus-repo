@@ -10006,6 +10006,7 @@ MonoBehaviour:
   maxHealth: 400
   nameplateHandler: {fileID: 6009165175879576115}
   pathfindingModule: {fileID: 2486727795557255818}
+  maxHealthScalesWithDungeonLevel: 1
 --- !u!1 &2486727796619891794
 GameObject:
   m_ObjectHideFlags: 0
@@ -10022,6 +10023,7 @@ GameObject:
   - component: {fileID: 2486727795557255818}
   - component: {fileID: 7525794050819596180}
   - component: {fileID: 3684334223672889790}
+  - component: {fileID: 7413357026888288611}
   m_Layer: 11
   m_Name: HeavyRaiderEnemy
   m_TagString: Untagged
@@ -10230,6 +10232,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f48e69615a2164595eda0b627c6200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7413357026888288611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2486727796619891794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616274e7c39a2b54482e93e7277c7042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 2486727796619891823}
+  bossRoomTrigger: {fileID: 0}
 --- !u!1 &2783517468319632584
 GameObject:
   m_ObjectHideFlags: 0

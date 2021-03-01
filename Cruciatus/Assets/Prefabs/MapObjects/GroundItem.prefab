@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 448953928970496805}
   - component: {fileID: 448953928970496804}
   - component: {fileID: 4615972373531874333}
+  - component: {fileID: 6895580173995665917}
   m_Layer: 16
   m_Name: GroundItem
   m_TagString: Untagged
@@ -228,6 +229,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &6895580173995665917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448953928970496802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2f69ee6ec2c7894db5fd61bf39147ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameplateCanvas: {fileID: 448953929824776264}
 --- !u!1 &448953929158757334
 GameObject:
   m_ObjectHideFlags: 0

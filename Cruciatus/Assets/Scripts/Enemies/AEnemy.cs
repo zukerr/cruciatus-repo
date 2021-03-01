@@ -24,6 +24,13 @@ public abstract class AEnemy : MonoBehaviour
     public float MovementSpeed => movementSpeed;
     public DamagableObject DamagableEnemy => damagableObject;
 
+    public EnemyOnDeathSubject OnDeathHandle { get; private set; }
+
+    private void Awake()
+    {
+        OnDeathHandle = new EnemyOnDeathSubject();
+    }
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -94,6 +101,7 @@ public abstract class AEnemy : MonoBehaviour
             enemyLootTable.DropItems();
             GridPathfinding.instance.HandleMobDeathOptimization();
             OnDeath();
+            OnDeathHandle.Notify();
             Destroy(rootGameObject);
         }
     }

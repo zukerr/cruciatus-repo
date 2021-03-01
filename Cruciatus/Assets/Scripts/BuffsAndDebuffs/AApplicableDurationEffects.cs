@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public abstract class AApplicableDurationEffects : MonoBehaviour
 {
@@ -89,16 +90,22 @@ public abstract class AApplicableDurationEffects : MonoBehaviour
     private void TickDurationEffects(List<LiveCooldownDurationEffect> durationEffects)
     {
         List<LiveCooldownDurationEffect> cleanUpList = new List<LiveCooldownDurationEffect>();
-        foreach(LiveCooldownDurationEffect dEffect in durationEffects)
+        for (int i = 0; i < durationEffects.Count; i++)
         {
-            dEffect.ModifyCurrentDuration(-Time.deltaTime * tickingSpeed);
-            if (dEffect.CurrentDuration == 0)
+            if(durationEffects[i] != null)
             {
-                //RemoveLiveEffect(durationEffects, dEffect);
-                cleanUpList.Add(dEffect);
+                LiveCooldownDurationEffect dEffect = durationEffects[i];
+                dEffect.ModifyCurrentDuration(-Time.deltaTime * tickingSpeed);
+                if (dEffect.CurrentDuration == 0)
+                {
+                    //RemoveLiveEffect(durationEffects, dEffect);
+                    cleanUpList.Add(dEffect);
+                }
+
+                dEffect.OnOwnerTick();
             }
         }
-        for(int i = 0; i < cleanUpList.Count; i++)
+        for (int i = 0; i < cleanUpList.Count; i++)
         {
             RemoveLiveEffect(durationEffects, cleanUpList[0]);
         }

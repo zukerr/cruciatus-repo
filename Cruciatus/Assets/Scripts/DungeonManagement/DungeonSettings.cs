@@ -38,15 +38,15 @@ public class DungeonSettings : MonoBehaviour
         {
             Destroy(this);
         }
-    }
 
-    private void Start()
-    {
         //setup scales according to dungeon level
+        SetupDungeonScaling();
     }
 
     private void SetupDungeonScaling()
     {
-
+        GetComponent<DungeonUI>().SetLevelValue(dungeonLevel);
+        enemyDamageMultiplier = DungeonScalesData.Instance.GetDamageMultiplierOfLevel(dungeonLevel);
+        enemyHealthMultiplier = DungeonScalesData.Instance.GetHealthMultiplierOfLevel(dungeonLevel);
     }
 }

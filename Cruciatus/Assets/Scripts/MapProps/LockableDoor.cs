@@ -7,32 +7,39 @@ public class LockableDoor : ALockable
     [SerializeField]
     private Animator animator = null;
     [SerializeField]
-    private bool lockpickingRequired = false;
-    [SerializeField]
-    private int lockpickingOscilators = 3;
-    [SerializeField]
-    private AudioSource openingSFX = null;
+    private bool endOfDungeonDoor = false;
 
     public override void AfterUnlock()
     {
         animator.SetBool("opendoor", true);
-        DisableTriggerCollider();
-        openingSFX.Play();
+        base.AfterUnlock();
     }
 
-    public override void Interact()
+    protected override void UnlockingInteraction()
     {
-        base.Interact();
-        if(!lockpickingRequired)
+        if (endOfDungeonDoor)
         {
-            animator.SetBool("opendoor", true);
-            DisableTriggerCollider();
+            if (!DungeonEnemyCount.instance.DungeonComplete())
+            {
+                TextDisplayPlayerInfo.instance.DisplayStringInMsgBoxForTime("Dungeon hasn't been completed yet!");
+                return;
+            }
+        }
+        base.UnlockingInteraction();
+    }
+
+    public void CloseAndDisableDoor()
+    {
+        if(animator.GetBool("opendoor"))
+        {
+            animator.SetBool("opendoor", false);
             openingSFX.Play();
         }
-        else
-        {
-            //lockpicking
-            PlayerCharacter.instance.ControlsModule.ToggleLockpicking(lockpickingOscilators, this);
-        }
+        DisableTriggerCollider();
+    }
+
+    public void EnableDoor()
+    {
+        GetComponent<Collider2D>().enabled = true;
     }
 }
