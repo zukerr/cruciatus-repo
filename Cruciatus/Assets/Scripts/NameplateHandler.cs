@@ -17,6 +17,8 @@ public class NameplateHandler : MonoBehaviour
     [SerializeField]
     private float floatingCombatTextRandomSpawnRangeY = 0.25f;
 
+    private float timeToSelfDestructionAfterUnparenting = 10f;
+
     private GameObject floatingCombatText = null;
 
     // Update is called once per frame
@@ -41,5 +43,11 @@ public class NameplateHandler : MonoBehaviour
     {
         transform.GetChild(0).gameObject.SetActive(false);
         transform.SetParent(null);
+        Invoke("SelfDestruct", timeToSelfDestructionAfterUnparenting);
+    }
+
+    private void SelfDestruct()
+    {
+        Destroy(gameObject);
     }
 }

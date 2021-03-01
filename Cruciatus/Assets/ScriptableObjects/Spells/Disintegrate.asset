@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: Disintegrate
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 960761dc805f9d646a99a718921edbc9, type: 3}
+  description: 'Disintegrate
+
+    Fire a single projectile in target direction. If
+    it hits an enemy, generate 2 Spirit. Spending or depleting 1 point of Ignition
+    has a chance of making your next Disintegrate instant.'
   cooldown: 0
   castingTime: 2
   spiritCost: 0

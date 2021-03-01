@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: BurningRush
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 594d41165e5141e42a2862fbd8131306, type: 3}
+  description: 'Burning Rush
+
+    Dash a short distance in target direction.'
   cooldown: 5
   castingTime: 0
   spiritCost: 0

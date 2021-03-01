@@ -12,6 +12,8 @@ public abstract class ADurationEffect : ScriptableObject
     protected bool refreshesOnNewStack = true;
     [SerializeField]
     protected Sprite icon;
+    [SerializeField, TextArea]
+    private string description = "";
 
     protected DamagableObject owner = null;
 
@@ -19,6 +21,7 @@ public abstract class ADurationEffect : ScriptableObject
     public int MaxStacks => maxStacks;
     public bool RefreshesOnNewStack => refreshesOnNewStack;
     public Sprite Icon => icon;
+    public string Description => description;
 
     public void SetOwner(DamagableObject _owner)
     {

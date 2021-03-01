@@ -38,4 +38,14 @@ public class UiDurationEffectNode : MonoBehaviour
     {
         effectImage.sprite = sprite;
     }
+
+    public void EnableTooltip()
+    {
+        TooltipController.Instance.DisplayTooltip(transform.position, RootLiveEffect.DurationEffect.Description);
+    }
+
+    public void DisableTooltip()
+    {
+        TooltipController.Instance.StopDisplayingTooltip();
+    }
 }

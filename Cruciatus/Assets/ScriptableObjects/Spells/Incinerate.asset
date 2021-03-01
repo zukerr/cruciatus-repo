@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: Incinerate
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 87097a214be117b44b7436f4e814b62b, type: 3}
+  description: 'Incinerate
+
+    Fire few fiery projectiles in target direction. They
+    don''t dissipate on contact with enemies. One enemy can be hit by multiple projectiles.
+    Costs 3 Spirit to cast. Generates 1 Ignition for each enemy hit.'
   cooldown: 0
   castingTime: 1.25
   spiritCost: 3

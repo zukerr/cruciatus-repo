@@ -6,6 +6,8 @@ public abstract class ASpell : ScriptableObject
 {
     [SerializeField]
     private Sprite icon = null;
+    [SerializeField, TextArea]
+    private string description = "";
     [SerializeField]
     protected float cooldown = 0f;
     [SerializeField]
@@ -22,6 +24,20 @@ public abstract class ASpell : ScriptableObject
     public float CastingTime => castingTime * (1 - PlayerCharacter.instance.StatsModule._StatsList.CastTimeReduction);
     public float Cooldown => cooldown * (1 - PlayerCharacter.instance.StatsModule._StatsList.CooldownReduction);
     public Sprite Icon => icon;
+    public string Description
+    {
+        get
+        {
+            if(cooldown > 0)
+            {
+                return $"{description}\nCooldown: {cooldown}s";
+            }
+            else
+            {
+                return description;
+            }
+        }
+    }
 
     public abstract void Cast();
 

@@ -74,4 +74,28 @@ public class ActionBarSlot : MonoBehaviour
     {
         frame.color = Color.black;
     }
+
+    public void EnableTooltip()
+    {
+        if(PlayerCharacter.instance.SpellcastingModule.ActivePlayerSpells.Count <= transform.GetSiblingIndex())
+        {
+            return;
+        }
+
+        string tooltipText = PlayerCharacter.instance.SpellcastingModule.ActivePlayerSpells[transform.GetSiblingIndex()].Description;
+        Vector3 topLeft = new Vector3
+            (
+                transform.position.x,
+                transform.position.y,
+                transform.position.z
+            );
+        TooltipController.Instance.DisplayTooltip(topLeft, tooltipText);
+
+        Debug.Log("ActionBarSlot position: " + transform.position);
+    }
+
+    public void DisableTooltip()
+    {
+        TooltipController.Instance.StopDisplayingTooltip();
+    }
 }
