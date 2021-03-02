@@ -8,7 +8,7 @@ public class DamagableObjectNameplated : DamagableObject
     [SerializeField]
     private NameplateHandler nameplateHandler = null;
     [SerializeField]
-    private MobGridPathfinding pathfindingModule = null;
+    private EnemyCombatHandler enemyCombatHandler = null;
     [SerializeField]
     private bool maxHealthScalesWithDungeonLevel = true;
 
@@ -32,9 +32,9 @@ public class DamagableObjectNameplated : DamagableObject
         {
             nameplateHandler.InstantiateFloatingCombatText((-value).ToString());
 
-            if(pathfindingModule != null)
+            if(enemyCombatHandler != null)
             {
-                pathfindingModule.EnterCombat();
+                enemyCombatHandler.EnterCombat();
             }
         }
     }

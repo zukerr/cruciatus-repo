@@ -13,7 +13,7 @@ public abstract class ARangedEnemy : AStandardEnemy
     [SerializeField]
     private float rangedEngageCombatRange = 3f;
     [SerializeField]
-    private MobGridPathfinding mobPathfinding = null;
+    private EnemyCombatHandler combatHandler = null;
 
     public float RangedProjectileRange => rangedProjectileRange;
     public float ProjectileSpeed => projectileSpeed;
@@ -38,15 +38,14 @@ public abstract class ARangedEnemy : AStandardEnemy
 
     private void SuspendWalking()
     {
-        mobPathfinding.StopAllCoroutines();
         rbody.velocity = Vector2.zero;
         rbody.angularVelocity = 0f;
-        mobPathfinding.WalkingSuspended = true;
+        combatHandler.WalkingSuspended = true;
     }
 
     public void OnCastEnd()
     {
-        mobPathfinding.WalkingSuspended = false;
+        combatHandler.WalkingSuspended = false;
         animator.SetBool(GlobalVariables.AC_PARAMETER_IS_ATTACKING, false);
     }
 
