@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -133,6 +134,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.7830189, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -208,6 +210,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -277,8 +280,8 @@ Canvas:
   m_OverridePixelPerfect: 1
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 25
+  m_SortingLayerID: -278985037
+  m_SortingOrder: 105
   m_TargetDisplay: 0
 --- !u!114 &1687870925417506533
 MonoBehaviour:
@@ -297,3 +300,4 @@ MonoBehaviour:
   floatingCombatTextPrefab: {fileID: 2607151971237336858, guid: 44790e8b60d0d3b498035a410b012dd1,
     type: 3}
   floatingCombatTextRandomSpawnRangeX: 0.5
+  floatingCombatTextRandomSpawnRangeY: 0.25

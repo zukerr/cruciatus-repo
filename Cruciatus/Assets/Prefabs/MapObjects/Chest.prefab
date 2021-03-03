@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2017668895142008142}
   - component: {fileID: 2017668895142008143}
   - component: {fileID: 7516717351062422753}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2017668896561800728}
   - component: {fileID: 2017668896561800729}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 6463305484483597679}
   - component: {fileID: 384478237306121454}
   - component: {fileID: 2339563286999791491}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}

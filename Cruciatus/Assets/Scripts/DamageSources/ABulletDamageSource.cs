@@ -40,6 +40,12 @@ public abstract class ABulletDamageSource : SingleDamageSource
 
         Debug.Log("Bullet just hit: " + collision.gameObject.name);
 
+        //anti door trigger mechanism
+        if(collision.isTrigger && collision.GetComponent<LockableDoor>() != null)
+        {
+            return;
+        }
+
         
         if (CollisionOnCorrectLayer(collision))
         {

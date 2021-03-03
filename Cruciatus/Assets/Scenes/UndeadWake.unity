@@ -14348,7 +14348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 322428915}
   - component: {fileID: 322428916}
-  - component: {fileID: 322428917}
+  - component: {fileID: 322428918}
   m_Layer: 5
   m_Name: Lockpicking
   m_TagString: Untagged
@@ -14399,7 +14399,7 @@ MonoBehaviour:
   completeSFX: {fileID: 1035793723}
   topSFX: {fileID: 482568613}
   bottomSFX: {fileID: 737217519}
---- !u!114 &322428917
+--- !u!114 &322428918
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14718,7 +14718,7 @@ MonoBehaviour:
   manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
-  logPathResults: 1
+  logPathResults: 4
   maxNearestNodeDistance: 100
   scanOnStartup: 1
   fullGetNearestSearch: 0
@@ -15038,6 +15038,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 401136137}
+  - component: {fileID: 401136138}
   m_Layer: 5
   m_Name: BuffsAndDebuffs
   m_TagString: Untagged
@@ -15066,6 +15067,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 82}
   m_SizeDelta: {x: 600, y: 150}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!223 &401136138
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401136136}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: -278985037
+  m_SortingOrder: 110
+  m_TargetDisplay: 0
 --- !u!1 &408696749
 GameObject:
   m_ObjectHideFlags: 0
@@ -16946,6 +16968,7 @@ GameObject:
   - component: {fileID: 633712233}
   - component: {fileID: 633712232}
   - component: {fileID: 633712231}
+  - component: {fileID: 633712235}
   m_Layer: 5
   m_Name: Tooltip
   m_TagString: Untagged
@@ -17049,6 +17072,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 633712229}
   m_CullTransparentMesh: 0
+--- !u!223 &633712235
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633712229}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: -278985037
+  m_SortingOrder: 111
+  m_TargetDisplay: 0
 --- !u!1001 &662084572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18008,6 +18052,7 @@ GameObject:
   - component: {fileID: 709288366}
   - component: {fileID: 709288365}
   - component: {fileID: 709288364}
+  - component: {fileID: 709288368}
   m_Layer: 5
   m_Name: MessageBox
   m_TagString: Untagged
@@ -18111,6 +18156,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 709288362}
   m_CullTransparentMesh: 0
+--- !u!223 &709288368
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709288362}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: -278985037
+  m_SortingOrder: 110
+  m_TargetDisplay: 0
 --- !u!1 &713723055
 GameObject:
   m_ObjectHideFlags: 0
@@ -18221,12 +18287,12 @@ PrefabInstance:
     - target: {fileID: 2634454436331992144, guid: f10a53115e3ef294fb141cd9da4256bb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 88.34
+      value: 88.21
       objectReference: {fileID: 0}
     - target: {fileID: 2634454436331992144, guid: f10a53115e3ef294fb141cd9da4256bb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.71
+      value: 17.77
       objectReference: {fileID: 0}
     - target: {fileID: 2634454436331992144, guid: f10a53115e3ef294fb141cd9da4256bb,
         type: 3}
@@ -53906,7 +53972,7 @@ GameObject:
   - component: {fileID: 1014682791}
   - component: {fileID: 1014682792}
   - component: {fileID: 1014682793}
-  - component: {fileID: 1014682794}
+  - component: {fileID: 1014682795}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -53967,7 +54033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f62e3d1ec25c533459100080114d86ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1014682794
+--- !u!114 &1014682795
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55634,6 +55700,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1108592200}
   - component: {fileID: 1108592201}
+  - component: {fileID: 1108592202}
   m_Layer: 5
   m_Name: DungeonProgressOverlay
   m_TagString: Untagged
@@ -55669,6 +55736,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108592199}
   m_CullTransparentMesh: 0
+--- !u!223 &1108592202
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108592199}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: -278985037
+  m_SortingOrder: 110
+  m_TargetDisplay: 0
 --- !u!1 &1117252321
 GameObject:
   m_ObjectHideFlags: 0
@@ -55978,6 +56066,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1138084472}
   - component: {fileID: 1138084473}
+  - component: {fileID: 1138084475}
   m_Layer: 5
   m_Name: ActionsAndResources
   m_TagString: Untagged
@@ -56015,6 +56104,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138084471}
   m_CullTransparentMesh: 0
+--- !u!223 &1138084475
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138084471}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: -278985037
+  m_SortingOrder: 110
+  m_TargetDisplay: 0
 --- !u!1001 &1142586597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59282,6 +59392,7 @@ GameObject:
   - component: {fileID: 1486016839}
   - component: {fileID: 1486016838}
   - component: {fileID: 1486016840}
+  - component: {fileID: 1486016841}
   m_Layer: 5
   m_Name: EscMenu
   m_TagString: Untagged
@@ -59361,6 +59472,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerControls: {fileID: 1912403502}
   soundSettings: {fileID: 316702898}
+--- !u!114 &1486016841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486016836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af826d90e9799ff47933d41f286e51df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1490314212
 GameObject:
   m_ObjectHideFlags: 0
