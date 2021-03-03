@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3594708694187441148}
   - component: {fileID: 7855771369689678461}
   - component: {fileID: 5199250682462116112}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 8381354696144403421}
   - component: {fileID: 2306154534021151546}
   - component: {fileID: 308357746}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,10 +210,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableOnInteract: 0
-  animator: {fileID: 8381354696144403421}
   lockpickingRequired: 1
   lockpickingOscilators: 3
   openingSFX: {fileID: 7855771369689678461}
+  animator: {fileID: 8381354696144403421}
+  endOfDungeonDoor: 0
 --- !u!61 &308357746
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -250,7 +251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8381354697023146123}
   - component: {fileID: 8381354697023146122}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8381354697593453023}
   - component: {fileID: 8381354697593453022}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

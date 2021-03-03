@@ -9661,6 +9661,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2486727795145549462}
   - component: {fileID: 2486727795145549463}
+  - component: {fileID: 6536402936140526803}
+  - component: {fileID: 3140374062376289912}
+  - component: {fileID: 3797733847813715961}
   m_Layer: 11
   m_Name: HeavyRaiderBoss
   m_TagString: Untagged
@@ -9706,6 +9709,84 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &6536402936140526803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2486727795145549465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
+--- !u!114 &3140374062376289912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2486727795145549465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6eb1402c17e84a9282a7f0f62eb584f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 2
+  radius: 0.3
+  height: 2
+  repathRate: 0.5
+  canSearch: 0
+  canMove: 0
+  maxSpeed: 2.2
+  gravity: {x: 0, y: 0, z: 0}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  centerOffsetCompatibility: NaN
+  orientation: 1
+  enableRotation: 0
+  targetCompatibility: {fileID: 0}
+  maxAcceleration: -2.5
+  rotationSpeed: 360
+  slowdownDistance: 0.6
+  pickNextWaypointDist: 0.3
+  endReachedDistance: 0.7
+  alwaysDrawGizmos: 1
+  slowWhenNotFacingTarget: 1
+  whenCloseToDestination: 0
+  constrainInsideGraph: 0
+--- !u!114 &3797733847813715961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2486727795145549465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  target: {fileID: 0}
 --- !u!1 &2486727795336433238
 GameObject:
   m_ObjectHideFlags: 0
@@ -10005,7 +10086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 400
   nameplateHandler: {fileID: 6009165175879576115}
-  pathfindingModule: {fileID: 2486727795557255818}
+  enemyCombatHandler: {fileID: 8448284274626818197}
   maxHealthScalesWithDungeonLevel: 1
 --- !u!1 &2486727796619891794
 GameObject:
@@ -10020,7 +10101,7 @@ GameObject:
   - component: {fileID: 2486727796619891793}
   - component: {fileID: 2486727796619891823}
   - component: {fileID: 2486727796619891820}
-  - component: {fileID: 2486727795557255818}
+  - component: {fileID: 8448284274626818197}
   - component: {fileID: 7525794050819596180}
   - component: {fileID: 3684334223672889790}
   - component: {fileID: 7413357026888288611}
@@ -10166,7 +10247,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.59592867, y: 0.6106281}
   m_EdgeRadius: 0
---- !u!114 &2486727795557255818
+--- !u!114 &8448284274626818197
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10175,17 +10256,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2486727796619891794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a53c8cb6b4ba293448d7a9c181e4758e, type: 3}
+  m_Script: {fileID: 11500000, guid: 037494454d4eb8944a59fe6abb387f5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mobRbody: {fileID: 2486727795145549463}
-  minimalPathNodeSwitchDistance: 0.05
+  mobAIPath: {fileID: 3140374062376289912}
+  mobAIDestinationSetter: {fileID: 3797733847813715961}
   mobAEnemy: {fileID: 2486727796619891823}
-  timeToStuck: 2
-  changeToFollowWallProximity: 2
-  engageCombatProximityNonWall: 10
-  engageCombatProximityThroughWall: 3
-  modeAdjustmentPollingTime: 0.5
+  engageCombatProximityNonWall: 12
+  engageCombatProximityThroughWall: 5
   walkingSFX: {fileID: 2446217313764151893}
 --- !u!114 &7525794050819596180
 MonoBehaviour:
@@ -10673,18 +10752,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e9d0ebd06dc91945a2584b58590ae25, type: 3}
---- !u!114 &2621331650388284971 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6946949163366652669, guid: 8e9d0ebd06dc91945a2584b58590ae25,
-    type: 3}
-  m_PrefabInstance: {fileID: 4902258673260907734}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6009165175879576115 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1687870925417506533, guid: 8e9d0ebd06dc91945a2584b58590ae25,
@@ -10695,6 +10762,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77a9eeb7ebef27849b6234009bb76fb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2621331650388284971 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6946949163366652669, guid: 8e9d0ebd06dc91945a2584b58590ae25,
+    type: 3}
+  m_PrefabInstance: {fileID: 4902258673260907734}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &3619190069388058570 stripped

@@ -8,7 +8,19 @@ using System.Collections;
 
 public class GroundItemsWatcherSubject : UniversalSubject
 {
-    public bool GroundItemsInFrontOfUI { get; set; } = true;
+    private bool groundItemsInFrontOfUI = true;
+    public bool GroundItemsInFrontOfUI
+    {
+        get
+        {
+            return groundItemsInFrontOfUI;
+        }
+        set
+        {
+            groundItemsInFrontOfUI = value;
+            Notify();
+        }
+    }
 
     private static GroundItemsWatcherSubject instance = null;
 

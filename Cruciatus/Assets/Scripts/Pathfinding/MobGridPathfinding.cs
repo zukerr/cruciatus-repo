@@ -10,7 +10,7 @@ public enum PathfindingMode
     Passive
 }
 
-public class MobGridPathfinding : MonoBehaviour
+public class OldMobGridPathfinding : MonoBehaviour
 {
     [SerializeField]
     private Rigidbody2D mobRbody = null;

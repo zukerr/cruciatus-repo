@@ -82,6 +82,11 @@ public abstract class AEnemy : MonoBehaviour
 
     public void RotateTowardsVector3Position(Vector3 position)
     {
+        if(this == null)
+        {
+            return;
+        }
+
         Vector3 myPosition = transform.position;
         position -= myPosition;
 
@@ -99,7 +104,6 @@ public abstract class AEnemy : MonoBehaviour
             Instantiate(deathParticleEffectPrefab, transform.position, deathParticleEffectPrefab.transform.rotation);
             damagableObject.HandleNameplateOnDeath();
             enemyLootTable.DropItems();
-            GridPathfinding.instance.HandleMobDeathOptimization();
             OnDeath();
             OnDeathHandle.Notify();
             Destroy(rootGameObject);
