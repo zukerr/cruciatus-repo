@@ -45,6 +45,7 @@ public class EnemyCombatHandler : MonoBehaviour
     }
 
     private bool seekingPlayer = false;
+    public bool InCombat => seekingPlayer;
 
     // Start is called before the first frame update
     void Start()
