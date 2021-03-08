@@ -117,6 +117,11 @@ HOW TO FIX SCUFFED TIGHT BORDERS ON UI:
 	-use a design pattern for boss abilities, so they are disconnected and interchangable with eachother(i.e. you need to be able to assign one of the abilties to another boss)
 -change cone chains ability to be self contained within a prefab -> attach animator to it and redo the animation clip,
  so that to cast this ability you will only need connection to prefab from PummelerConeChains class.
+-rename boss ability classes to resemble their universal nature (PummelerRam -> RamBossAbility)
+-make documentation instructions on how to do things in the game
+ (adding new enemies, adding new items, adding new player abilities,
+ adding new boss abilities, adding new bosses, adding new map props,
+ adding new dungeons, adding new ui elements, adding new particle effects, adding sound effects)
 -make sound effect for pummeler ram telegraph
 -make sound effect for pummeler ram ability
 -make sound effect for pummeler ram ability hit
