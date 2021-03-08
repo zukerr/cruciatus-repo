@@ -438,9 +438,6 @@ MonoBehaviour:
   dealDamageSFX: {fileID: 1615896222526779639}
   rightHandAxePs: {fileID: 4510316497584334792}
   leftHandCleaverPs: {fileID: 4510316498607331073}
-  combatHandler: {fileID: 3644825362756266795}
-  ramMechanic: {fileID: 6566026236633669490}
-  coneChainsMechanic: {fileID: 5418435026884122082}
 --- !u!114 &6566026236633669490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,14 +450,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf76b133e8dfbce448938d855c23749e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyCombatHandler: {fileID: 3644825362756266795}
+  bossOwner: {fileID: 6082843142732979504}
   rbody: {fileID: 1095777077619557824}
   telegraphPrefab: {fileID: 2783644306571880470, guid: 9ffdc851ccafc3945b96c32a079041d9,
     type: 3}
-  combatHandler: {fileID: 3644825362756266795}
   damage: 40
   windUpTime: 0.8
   telegraphSpeed: 1000
   repeatRateInSeconds: 10
+  startDelayInSeconds: 1
   ramMechanicSpeed: 30
   ramHitSfx: {fileID: 8464636864712271686}
 --- !u!114 &5418435026884122082
@@ -475,14 +474,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f84b457a45fffc45b1876bdb06836d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyCombatHandler: {fileID: 3644825362756266795}
+  bossOwner: {fileID: 6082843142732979504}
   rbody: {fileID: 1095777077619557824}
   telegraphPrefab: {fileID: 5188762787310344740, guid: 89420b3afdf59934b931c74cf665ac87,
     type: 3}
-  combatHandler: {fileID: 3644825362756266795}
   damage: 30
   windUpTime: 0.7
   telegraphSpeed: 1000
   repeatRateInSeconds: 6
+  startDelayInSeconds: 2
   telegraphTargets:
   - {fileID: 8687897053972029334}
   - {fileID: 1642712541351849466}
@@ -490,7 +491,6 @@ MonoBehaviour:
   - {fileID: 7012073511403581781}
   - {fileID: 7188957296150033382}
   targetReachedRange: 0.1
-  ramMechanic: {fileID: 6566026236633669490}
   spikeBalls:
   - {fileID: 2382190259619969485}
   - {fileID: 4410800806313865082}

@@ -2,24 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pummeler : AMeleeEnemy
+public class Pummeler : AMeleeEnemy, IBossPriority
 {
     [SerializeField]
     private ParticleSystem rightHandAxePs = null;
     [SerializeField]
     private ParticleSystem leftHandCleaverPs = null;
-    [SerializeField]
-    private EnemyCombatHandler combatHandler = null;
-    [SerializeField]
-    private ABossAbility ramMechanic = null;
-    [SerializeField]
-    private ABossAbility coneChainsMechanic = null;
 
+    public bool AbilityPriorityTaken { get; private set; } = false;
 
     protected override void Start()
     {
         base.Start();
-        StartCoroutine(BossMechanicsCoroutine());
     }
 
     protected override void PlayParticleEffects()
@@ -34,29 +28,18 @@ public class Pummeler : AMeleeEnemy
         leftHandCleaverPs.Stop();
     }
 
-    //this can be remade using observer design pattern, ExecuteRamMechanic can be invoked on 'EnterCombat' event
-    private IEnumerator BossMechanicsCoroutine()
+    public bool IsPriorityTaken()
     {
-        while(!combatHandler.InCombat)
-        {
-            yield return null;
-        }
-        InvokeRepeating(nameof(ExecuteRamMechanic), 1f, ramMechanic.RepeatRateInSeconds);
-        InvokeRepeating(nameof(ExecuteConeChainMechanic), 2f, coneChainsMechanic.RepeatRateInSeconds);
+        return AbilityPriorityTaken;
     }
 
-    private void ExecuteRamMechanic()
+    public void AquirePriority()
     {
-        ramMechanic.ExecuteAbility();
+        AbilityPriorityTaken = true;
     }
 
-    private void ExecuteConeChainMechanic()
+    public void YieldPriority()
     {
-        coneChainsMechanic.ExecuteAbility();
-    }
-
-    public void EnableMovement()
-    {
-        combatHandler.WalkingSuspended = false;
+        AbilityPriorityTaken = false;
     }
 }

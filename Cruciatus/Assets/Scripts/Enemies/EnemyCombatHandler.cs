@@ -47,6 +47,13 @@ public class EnemyCombatHandler : MonoBehaviour
     private bool seekingPlayer = false;
     public bool InCombat => seekingPlayer;
 
+    public UniversalSubject OnEnterCombatHandle { get; private set; } = null;
+
+    private void Awake()
+    {
+        OnEnterCombatHandle = new UniversalSubject();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,6 +83,7 @@ public class EnemyCombatHandler : MonoBehaviour
             Debug.Log("Mob entering combat.");
             WalkingSuspended = false;
             seekingPlayer = true;
+            OnEnterCombatHandle.Notify();
         }
     }
 

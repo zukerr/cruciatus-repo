@@ -27,20 +27,20 @@ public class PummelerRam : ABossAbility
 
     public override void ExecuteAbility()
     {
-        if (combatHandler.InCombat)
+        if (CombatHandler.InCombat)
         {
             Vector3 ramTargetPosition = PlayerCharacter.instance.transform.position;
-            Telegraph();
-            combatHandler.WalkingSuspended = true;
+            CombatHandler.WalkingSuspended = true;
             rammingVector = GlobalVariables.GetVectorBetweenPoints(rbody.position, ramTargetPosition);
             transform.rotation = GlobalProjectile.GetInitialRotation(rammingVector.normalized);
-            Invoke(nameof(ExecuteInnerWorkings), windUpTime);
+            base.ExecuteAbility();
         }
     }
 
     protected override void ExecuteInnerWorkings()
     {
         ramming = true;
+        BossOwner.AquirePriority();
         rammingVector.Normalize();
         StartCoroutine(DashTowards(rammingVector));
     }
@@ -86,8 +86,9 @@ public class PummelerRam : ABossAbility
             }
 
             ramming = false;
+            BossOwner.YieldPriority();
             rbody.velocity = Vector2.zero;
-            combatHandler.WalkingSuspended = false;
+            CombatHandler.WalkingSuspended = false;
         }
     }
 }

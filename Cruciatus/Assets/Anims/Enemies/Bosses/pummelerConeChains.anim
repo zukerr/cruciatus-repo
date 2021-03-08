@@ -4673,7 +4673,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.98333335
-    functionName: EnableMovement
+    functionName: YieldAbilityPrio
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

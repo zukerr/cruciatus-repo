@@ -25,10 +25,12 @@ public abstract class AEnemy : MonoBehaviour
     public DamagableObject DamagableEnemy => damagableObject;
 
     public EnemyOnDeathSubject OnDeathHandle { get; private set; }
+    public UniversalSubject OnSetupHandle { get; private set; }
 
     private void Awake()
     {
         OnDeathHandle = new EnemyOnDeathSubject();
+        OnSetupHandle = new UniversalSubject();
     }
 
     // Start is called before the first frame update
@@ -36,6 +38,7 @@ public abstract class AEnemy : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         startingPosition = rbody.position;
+        OnSetupHandle.Notify();
     }
 
     // Update is called once per frame

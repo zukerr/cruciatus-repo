@@ -8,8 +8,8 @@ public class PummelerConeChains : ABossAbility
     private List<Transform> telegraphTargets = null;
     [SerializeField]
     private float targetReachedRange = 0.1f;
-    [SerializeField]
-    private PummelerRam ramMechanic = null;
+    //[SerializeField]
+    //private PummelerRam ramMechanic = null;
     
     [SerializeField]
     private List<PummelerMorningStar> spikeBalls = null;    
@@ -17,8 +17,9 @@ public class PummelerConeChains : ABossAbility
     private List<GameObject> telegraphProjectiles = new List<GameObject>();
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         SetupSpikeBallsDamage();
     }
 
@@ -80,21 +81,27 @@ public class PummelerConeChains : ABossAbility
 
     public override void ExecuteAbility()
     {
-        if (!ramMechanic.IsRamming)
+        if (!BossOwner.IsPriorityTaken())
         {
-            combatHandler.WalkingSuspended = true;
-            //telegraph cone chain
-            Telegraph();
-            Invoke(nameof(ExecuteInnerWorkings), windUpTime);
+            CombatHandler.WalkingSuspended = true;
+            base.ExecuteAbility();
         }
     }
 
     protected override void ExecuteInnerWorkings()
     {
-        if (!ramMechanic.IsRamming)
+        if (!BossOwner.IsPriorityTaken())
         {
+            BossOwner.AquirePriority();
             Animator anim = GetComponent<Animator>();
             anim.SetTrigger("coneChainAbility");
         }
+    }
+
+    //this is used as event call on animation
+    public void YieldAbilityPrio()
+    {
+        CombatHandler.WalkingSuspended = false;
+        BossOwner.YieldPriority();
     }
 }
