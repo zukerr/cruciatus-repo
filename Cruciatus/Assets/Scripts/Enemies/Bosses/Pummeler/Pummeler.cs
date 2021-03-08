@@ -40,10 +40,35 @@ public class Pummeler : AMeleeEnemy
             yield return null;
         }
         InvokeRepeating(nameof(ExecuteRamMechanic), 1f, ramMechanic.RamMechanicRepeatRateInSeconds);
+        InvokeRepeating(nameof(ExecuteConeChainMechanic), 2f, 6f);
     }
 
     private void ExecuteRamMechanic()
     {
         ramMechanic.ExecuteRamMechanic();
+    }
+
+    private void ExecuteConeChainMechanic()
+    {
+        if (!ramMechanic.IsRamming)
+        {
+            combatHandler.WalkingSuspended = true;
+            //telegraph cone chain
+            Invoke(nameof(ConeChainMechanic), 0.7f);
+        }
+    }
+
+    private void ConeChainMechanic()
+    {
+        if (!ramMechanic.IsRamming)
+        {
+            Animator anim = GetComponent<Animator>();
+            anim.SetTrigger("coneChainAbility");
+        }
+    }
+
+    public void EnableMovement()
+    {
+        combatHandler.WalkingSuspended = false;
     }
 }
