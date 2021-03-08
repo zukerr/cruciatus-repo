@@ -7,6 +7,7 @@ public abstract class ABossAbility : AEnemyOnEnterCombatObserver
     [SerializeField]
     private AEnemy bossOwner = null;
     public IBossPriority BossOwner => (IBossPriority)bossOwner;
+    public AEnemy RootAEnemy => bossOwner;
     [SerializeField]
     protected Rigidbody2D rbody = null;
     [SerializeField]

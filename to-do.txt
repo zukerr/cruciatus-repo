@@ -1,0 +1,166 @@
+	-flamestrike animation
+	-make casting animation better & more complex
+	-floating combat text
+	-casting animations to every skill
+	-UI
+	-UI action bar
+	-Spell icons
+	-action bar
+	-Recoil icon
+	-fix Burning Rush near walls
+	-Spell cooldowns
+	-Recoil proc animation
+>>sounds:
+	-recoil proc sound
+	-burning rush sound
+	-incinerate sound
+	-incinerate hit sound
+	-melee hit sound
+	-flamestrike subtle hit sound
+	-mob death sound
+
+	-mob path finding
+	-fix particle effects error
+	
+>>non-essential:
+{
+	-heal particle effect
+	-heal sound effect
+	-heal icon
+	-mob stab sound effect
+	-mob walking sound effect
+	-low health overlay
+	-esc menu(exit, pause, sound settings)
+	-lockpicking
+	-inventory: item preview on highlight ItemUI
+	-inventory filters
+	-exit out of inventory with esc
+	-turn off attack when inventory is on
+	-fix scrolling inventory
+	-ground item rarity text colors
+	-item ui rarity text colors
+	-stacking ground item names
+	-ground item world sprite
+	-inventory toggle
+	-item is lootable only when player is in range (constraint), make a voice player info when loot too far
+}
+	>>essential:
+	{
+	-lockpicking sound effects
+	-door sound effect
+	-enemy attack sound effects
+	-fix: casting flamestrike through the wall while 2 spirit ready and cd is up casts it with no effect -> casting shouldnt be possible
+	-ambient noises
+	-death mechanics
+	-archer enemy
+	-archer arrow projectile VFX
+	-boss enemy
+	-heavy melee enemy
+	-shield mechanics
+	-dungeon #1
+	}
+
+DEADLINE: 26.09 19.00 -> FUNCTIONAL GAME PROTOTYPE
+
+------skipping for now, but need to make eventually:
+-flame orb animation from tutorial
+	-inventory system
+	-looting system
+-tooltip on ui
+	-display info somehow which spell is being casted(either castbar or just make different casting animation variants)
+	^-> options: 1. yellow frame around action button 2. castbar 3. different casting animations
+
+
+Less important:
+-UI resource & health textures
+-damage meter
+
+https://drive.google.com/uc?export=download&id=1gOxgStQsthWwwv7Sr2mFbwwtC6_6jgUZ
+
+
+
+!!!
+HOW TO FIX SCUFFED TIGHT BORDERS ON UI:
+-The game is available only on select screen resolutions. To make it look the best, just go to:
+ UI Gameobject > Canvas Scaler > UI Scale Mode > Constant Pixel Size, and play around with scale factor. Then decide by eye which scale factor looks good on which resolution.
+ As of 18/09, the best scale factors besides 1: 0.93; 0.62; 0.5
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+---------comeback
+	-add doors to undead wake dungeon
+	-add exit to undead wake dungeon
+	-make chest dungeon object
+	-make dungeon exit only available when player is at 100% count and all bosses killed -> exit door locked up until this point
+	-dynamic sorting of ground items in front of lockpicking screen and inventory
+	-on dungeon timer expiration, apply a heavy dot to player
+		//PlayerCharacter.instance.DamagablePlayer.MaxHealth --> player max health
+		//PlayerCharacter.instance.DamagablePlayer.IsDead --> is player dead
+		//PlayerCharacter.instance.BuffsModule.ApplyEffect(ADurationEffect effect) --> apply buff/debuff to player
+	-add dungeon level to dungeon overlay ui
+	-add scaling data tables and automate mob damage and health scaling factors to adjust automatically to dungeon level
+	
+-----------essential tasks(absolutely must be done right now)
+	-delete mob nameplates after mob dies
+	-spell tooltips
+	-buffs tooltips
+	-add more enemies to undead wake dungeon
+	-add torches to undead wake dungeon
+	-fixed bullets with door trigger interaction
+	-play around with pathfinding parameters
+	-fix some ui-ground items sorting layer dependencies
+	-design boss to undead wake dungeon
+	-program ram ability to pummeler boss
+	-program cone chain ability to pummeler
+	-make sprite for end of chains in cone chain pummeler ability, add trigger collider and damage functionality
+	-use a design pattern for boss abilities, so they are disconnected and interchangable with eachother(i.e. you need to be able to assign one of the abilties to another boss)
+-change cone chains ability to be self contained within a prefab -> attach animator to it and redo the animation clip,
+ so that to cast this ability you will only need connection to prefab from PummelerConeChains class.
+-make sound effect for pummeler ram telegraph
+-make sound effect for pummeler ram ability
+-make sound effect for pummeler ram ability hit
+-make sound effect for pummeler cone chains telegraph
+-make sound effect for pummeler cone chains ability
+-make sound effect for pummeler cone chains ability hit
+-make VFX for pummeler ram ability
+-make VFX for pummeler ram ability hit
+-make VFX for pummeler cone chains ability
+-make VFX for pummeler cone chains ability hit
+-program pull chain ability to pummeler
+-make "augments room" -> room with vendors and other npcs meant for upgrading character. It loads in between dungeons.
+-on end of dungeon, load "augment room"
+-make universal affixes for dungeons
+-esc menu(keybindings)
+-esc menu button press sound effect
+-serialization
+-main menu
+-you died screen
+-player statistics window
+-update "Main" scene as a normal dungeon
+
+
+-----------frozen tasks(absolutely must be done, but CBA right now)
+	-optimise GridPathfinding: automatically remove walls from walkable tiles
+	-optimise pathfinding when engaging large number of enemies
+-background music
+-custom cursor image texture
+-fix dash colliding with PlayerTrigger layer(most likely fixed already)
+-on end of dungeon, display summary of the dungeon
+-fix "sliding feeling" to mob rotation while following the player
+
+-----------rethink tasks(think if those even have to be done)
+-experiment with player sprite
+-experiment with stabber sprite
+-experiment with smaller tiles
+-fix shield mechanics to eliminate 'hit shield and enemy at the same time' scenario
+-pickupable notes system
+-add mob name to the nameplate
+-display mob nameplate only after engaging combat
+-fading out dungeon end tunnel tiles
+-universal render pipeline => rework lights
+-item design for dungeon 1, incorporate to enemy loot tables 
+
+-----------tools programming tasks(things that will make designing faster, but not needed for the game itself)
+-make door trigger collider fit to sprite automatically
+
