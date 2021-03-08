@@ -93,10 +93,14 @@ public class DashSpell : ASpell
                 int playerTriggersLayerMask = 1 << GlobalVariables.PLAYER_TRIGGERS_LAYER_INDEX;
                 if (collider.IsTouchingLayers(~playerTriggersLayerMask))
                 {
-                    //break
-                    trueDashLength = -1;
+                    int enemyProjectilesLayerMask = 1 << GlobalVariables.ENEMY_PROJECTILES_LAYER_INDEX;
+                    if (collider.IsTouchingLayers(~enemyProjectilesLayerMask))
+                    {
+                        //break
+                        trueDashLength = -1;
 
-                    Debug.Log("DashSpell: Breaking dash!");
+                        Debug.Log("DashSpell: Breaking dash!");
+                    }                        
                 }
             }
             

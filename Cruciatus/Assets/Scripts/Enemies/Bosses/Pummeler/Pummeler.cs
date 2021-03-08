@@ -11,7 +11,9 @@ public class Pummeler : AMeleeEnemy
     [SerializeField]
     private EnemyCombatHandler combatHandler = null;
     [SerializeField]
-    private PummelerRam ramMechanic = null;
+    private ABossAbility ramMechanic = null;
+    [SerializeField]
+    private ABossAbility coneChainsMechanic = null;
 
 
     protected override void Start()
@@ -39,32 +41,18 @@ public class Pummeler : AMeleeEnemy
         {
             yield return null;
         }
-        InvokeRepeating(nameof(ExecuteRamMechanic), 1f, ramMechanic.RamMechanicRepeatRateInSeconds);
-        InvokeRepeating(nameof(ExecuteConeChainMechanic), 2f, 6f);
+        InvokeRepeating(nameof(ExecuteRamMechanic), 1f, ramMechanic.RepeatRateInSeconds);
+        InvokeRepeating(nameof(ExecuteConeChainMechanic), 2f, coneChainsMechanic.RepeatRateInSeconds);
     }
 
     private void ExecuteRamMechanic()
     {
-        ramMechanic.ExecuteRamMechanic();
+        ramMechanic.ExecuteAbility();
     }
 
     private void ExecuteConeChainMechanic()
     {
-        if (!ramMechanic.IsRamming)
-        {
-            combatHandler.WalkingSuspended = true;
-            //telegraph cone chain
-            Invoke(nameof(ConeChainMechanic), 0.7f);
-        }
-    }
-
-    private void ConeChainMechanic()
-    {
-        if (!ramMechanic.IsRamming)
-        {
-            Animator anim = GetComponent<Animator>();
-            anim.SetTrigger("coneChainAbility");
-        }
+        coneChainsMechanic.ExecuteAbility();
     }
 
     public void EnableMovement()

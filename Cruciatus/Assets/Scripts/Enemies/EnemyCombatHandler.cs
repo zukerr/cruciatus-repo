@@ -71,8 +71,12 @@ public class EnemyCombatHandler : MonoBehaviour
 
     public void EnterCombat()
     {
-        WalkingSuspended = false;
-        seekingPlayer = true;
+        if(!seekingPlayer)
+        {
+            Debug.Log("Mob entering combat.");
+            WalkingSuspended = false;
+            seekingPlayer = true;
+        }
     }
 
     private void DetectPlayerInProximity()

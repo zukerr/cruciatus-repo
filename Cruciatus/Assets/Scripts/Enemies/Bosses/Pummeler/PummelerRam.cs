@@ -6,55 +6,39 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class PummelerRam : MonoBehaviour
-{
-    [SerializeField]
-    private Rigidbody2D rbody = null;
-    [SerializeField]
-    private GameObject telegraphPrefab = null;
-    [SerializeField]
-    private EnemyCombatHandler combatHandler = null;
-    [SerializeField]
-    private float ramMechanicRepeatRateInSeconds = 10f;
-    [SerializeField]
-    private float ramMechanicWindUpTime = 0.8f;
-    [SerializeField]
-    private float ramMechanicDamage = 40f;
+public class PummelerRam : ABossAbility
+{    
     [SerializeField]
     private float ramMechanicSpeed = 30f;
     [SerializeField]
     private AudioSource ramHitSfx = null;
 
-    public float RamMechanicRepeatRateInSeconds => ramMechanicRepeatRateInSeconds;
-
     private bool ramming = false;
     private Vector2 rammingVector = Vector2.zero;
 
-    private float telegraphSpeed = 1000f;
-
     public bool IsRamming => ramming;
 
-    public void TelegraphRam()
+    protected override void Telegraph()
     {
         Vector2 pummelerPosition = rbody.position;
         Vector2 playerPosition = PlayerCharacter.instance.transform.position;
         GlobalProjectile.InstantiateProjectile(telegraphPrefab, pummelerPosition, playerPosition, telegraphSpeed);
     }
 
-    public void ExecuteRamMechanic()
+    public override void ExecuteAbility()
     {
         if (combatHandler.InCombat)
         {
             Vector3 ramTargetPosition = PlayerCharacter.instance.transform.position;
-            TelegraphRam();
+            Telegraph();
             combatHandler.WalkingSuspended = true;
             rammingVector = GlobalVariables.GetVectorBetweenPoints(rbody.position, ramTargetPosition);
             transform.rotation = GlobalProjectile.GetInitialRotation(rammingVector.normalized);
-            Invoke(nameof(ExecuteRamMechanicDash), ramMechanicWindUpTime);
+            Invoke(nameof(ExecuteInnerWorkings), windUpTime);
         }
     }
 
-    private void ExecuteRamMechanicDash()
+    protected override void ExecuteInnerWorkings()
     {
         ramming = true;
         rammingVector.Normalize();
@@ -96,7 +80,7 @@ public class PummelerRam : MonoBehaviour
             //if hit player, deal damage to player
             if (collision.gameObject.layer == GlobalVariables.PLAYER_LAYER_INDEX)
             {
-                PlayerCharacter.instance.DamagablePlayer.ModifyHealth(-ramMechanicDamage, DamageType.Physical);
+                PlayerCharacter.instance.DamagablePlayer.ModifyHealth(-damage, DamageType.Physical);
                 //play ram hit sound
                 ramHitSfx.Play();
             }

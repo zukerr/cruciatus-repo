@@ -16,6 +16,7 @@ public class GlobalVariables
     public const int EQUIPMENT_SLOTS_COUNT = 10;
     public const int SORTING_LAYER_BEHIND_UI = 99;
     public const int SORTING_LAYER_IN_FRONT_OF_UI = 101;
+    public const int ENEMY_PROJECTILES_LAYER_INDEX = 14;
 
     public static Vector3 GetMouseWorldPosition()
     {

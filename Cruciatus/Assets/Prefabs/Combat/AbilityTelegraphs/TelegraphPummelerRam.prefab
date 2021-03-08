@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5206365385981028365}
   - component: {fileID: 4607628742654073797}
   - component: {fileID: 1414919992279640089}
+  - component: {fileID: 2432455711859279444}
   m_Layer: 14
   m_Name: TelegraphPummelerRam
   m_TagString: Untagged
@@ -93,6 +94,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0546981216ffa24cb0ec2bf8023407d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2432455711859279444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2783644306571880470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c4e45ec225a58f40a66f5c3728302a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToSelfDestruction: 10
 --- !u!1001 &7358236222551143854
 PrefabInstance:
   m_ObjectHideFlags: 0
