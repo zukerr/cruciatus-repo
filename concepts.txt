@@ -226,4 +226,17 @@ WORLD GENERATION DESIGN:
 -Idea: Some rooms are predefined, normal dungeons can be generated randomly from predefined rooms
 
 
+------------------------
+
+SPELL UNLOCKING:
+
+Options:
+	1. Player has all abilities unlocked from beginning till the end
+	2. Player unlocks abilities through 'leveling' -> rigid unlock order
+	3. Player chooses, which ability to unlock on each 'level' -> fluent unlock order
+	
+		-> for 2. and 3.: In augment room, there is an npc that you can talk to. after doing so, you unlock a spell/spells.
+
+	-> for now, option 2 seems like the most logical one
+
 

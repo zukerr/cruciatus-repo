@@ -11,22 +11,23 @@ public class DashSpell : ASpell
     private float dashSpeed = 0f;
     [SerializeField]
     private GameObject particleEffectPrefab = null;
-    [SerializeField]
-    private bool isDashing = false;
+    //[SerializeField]
+    //private bool isDashing = false;
 
     public override void Cast()
     {
         Debug.Log("DashSpell: Before if!");
-        if (!isDashing)
-        {
-            Debug.Log("DashSpell: Before casting coroutine!");
-            PlayerCharacter.instance.StartCoroutine(DashCoroutine());
-        }
+        //if (isDashing)
+        //{
+        //    return;
+        //}
+        Debug.Log("DashSpell: Before casting coroutine!");
+        PlayerCharacter.instance.StartCoroutine(DashCoroutine());
     }
 
     public IEnumerator DashCoroutine()
     {
-        isDashing = true;
+        //isDashing = true;
         float trueDashLength = dashLength;
         Debug.Log("DashSpell: Using dash!");
 
@@ -109,6 +110,6 @@ public class DashSpell : ASpell
         }
 
         PlayerCharacter.instance.gameObject.GetComponent<PlayerMovement>().enabled = true;
-        isDashing = false;
+        //isDashing = false;
     }
 }

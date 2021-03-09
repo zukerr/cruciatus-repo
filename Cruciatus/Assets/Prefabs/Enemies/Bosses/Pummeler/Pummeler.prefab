@@ -259,14 +259,24 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 011c3007def2ca846b8145c4cab26efc, type: 2}
   - {fileID: 11400000, guid: 9e60c8909c47b294b92e60145a9b8882, type: 2}
   - {fileID: 11400000, guid: 1634c0350bbcf4c4485dbe9d0367f430, type: 2}
+  - {fileID: 11400000, guid: ac0d6c5df4aaba54c99ca0d2ef1153e9, type: 2}
+  - {fileID: 11400000, guid: b81f83b8c5362ae4ca9b47c50ac47947, type: 2}
+  - {fileID: 11400000, guid: 500c33d6a1918bb4a916caed15352b09, type: 2}
+  - {fileID: 11400000, guid: 797a90b7f2546414385b47e241a89285, type: 2}
+  - {fileID: 11400000, guid: 203840ad69c9fe94e85649d57b47a9f7, type: 2}
   chancesTable:
+  - 0.7
+  - 0.7
+  - 0.7
+  - 0.7
+  - 0.7
+  - 0.7
   - 0.6
   - 0.6
   - 0.6
   - 0.6
-  - 0.6
-  uncommonModChance: 0.3
-  rareModChance: 0.6
+  uncommonModChance: 0.25
+  rareModChance: 0.7
   enemyTransform: {fileID: 1095777077619557825}
 --- !u!114 &1095777076681930617
 MonoBehaviour:
