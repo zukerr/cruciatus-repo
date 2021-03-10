@@ -26,4 +26,3 @@ MonoBehaviour:
   dashSpeed: 10
   particleEffectPrefab: {fileID: 845419215798030879, guid: 30e806c3f9d31064e8ba0f319eaa02a0,
     type: 3}
-  isDashing: 0

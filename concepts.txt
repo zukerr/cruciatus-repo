@@ -239,4 +239,9 @@ Options:
 
 	-> for now, option 2 seems like the most logical one
 
+GAMEPLAY LOOP:
+
+-NO STORY INTRO -> ONLY "ADVENTURE MODE" from D3
+-with the current concept(timed dungeon, mobs give count) the must be something like "mythic dungeon tools" to plan the dungeon before starting
+-music: fast electronic
 
