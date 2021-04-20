@@ -51,7 +51,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -4957,6 +4957,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 7679228418900514096}
   soundType: 0
+  volumeMultiplier: 1
 --- !u!1 &1724136216625264511
 GameObject:
   m_ObjectHideFlags: 0

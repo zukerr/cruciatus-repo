@@ -142,6 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 906588940}
   soundType: 0
+  volumeMultiplier: 1
 --- !u!1 &4626352180703508979
 GameObject:
   m_ObjectHideFlags: 0
@@ -24094,7 +24095,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
